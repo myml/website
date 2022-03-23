@@ -123,14 +123,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v1
 
-      - name: Setup mdBook
-        uses: peaceiris/actions-mdbook@v1
-        with:
-          mdbook-version: '0.4.15'
-
-      - name: Build Docs
-        run: mdbook build
-
       - name: Setup Node.js
         uses: actions/setup-node@v1
         with:
@@ -158,14 +150,6 @@ jobs:
 
       - name: Setup AWS
         run: sudo apt install -y awscli
-
-      - name: Setup mdBook
-        uses: peaceiris/actions-mdbook@v1
-        with:
-          mdbook-version: '0.4.15'
-
-      - name: Build Docs
-        run: mdbook build
 
       - name: Setup Node.js
         uses: actions/setup-node@v1
