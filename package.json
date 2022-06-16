@@ -4,6 +4,7 @@
   "description": "The Pop!_OS website",
   "author": "System76 (hosting@system76.com)",
   "private": true,
+  "type": "module",
   "scripts": {
     "start": "nuxt dev",
     "build": "nuxt generate",

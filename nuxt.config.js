@@ -1,7 +1,7 @@
 import config from "./config/index";
 
 export default {
-  ssr: false,
+  ssr: true,
   target: "static",
 
   head: {
@@ -94,7 +94,7 @@ export default {
 
   buildModules: ["@aceforth/nuxt-optimized-images", "@nuxtjs/color-mode"],
 
-  modules: ["@nuxtjs/axios", "@nuxtjs/auth-next"],
+  modules: ["@nuxtjs/axios"],
 
   plugins: [
     "~/plugins/components",
