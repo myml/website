@@ -102,6 +102,7 @@ export default {
     "~/plugins/forms",
     "~/plugins/hal",
     "~/plugins/lazyload",
+    "~/plugins/i18n",
   ],
 
   optimizedImages: {

@@ -1,20 +1,11 @@
 <template>
   <main :class="classes">
-    <index-head />
-
     <index-streamline />
     <index-development />
     <index-testimonials />
-    <index-system76 />
     <index-security />
     <index-software />
     <index-other-features />
-    <index-pop-pi />
-
-    <div class="end">
-      <index-foot />
-      <index-footnotes />
-    </div>
   </main>
 </template>
 
