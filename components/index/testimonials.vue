@@ -109,7 +109,7 @@ section {
 }
 
 .quote {
-  color: #ffad00;
+  color: #2fc6ff;
   content: "“";
   font-size: 2rem;
   left: calc(-2rem - 1ch);

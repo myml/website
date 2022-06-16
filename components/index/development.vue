@@ -218,7 +218,7 @@ ul li {
 }
 
 ul li::before {
-  background-color: #ffad00;
+  background-color: #2fc6ff;
   border-radius: 50%;
   bottom: 0;
   content: "";
