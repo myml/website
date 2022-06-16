@@ -1,47 +1,47 @@
 export default {
   computed: {
-    classes () {
+    classes() {
       if (this.isDark) {
-        return 'dark-mode'
+        return "dark-mode";
       } else {
-        return 'light-mode'
+        return "light-mode";
       }
     },
 
     color: {
-      get () {
-        return this.$colorMode.preference
+      get() {
+        return this.$colorMode.preference;
       },
 
-      set (value) {
-        this.$colorMode.preference = value
-      }
+      set(value) {
+        this.$colorMode.preference = value;
+      },
     },
 
-    isDark () {
-      return (this.color === 'dark')
+    isDark() {
+      return this.color === "dark";
     },
 
-    isLight () {
-      return (!this.isDark)
-    }
+    isLight() {
+      return !this.isDark;
+    },
   },
 
   methods: {
-    setDark () {
-      this.color = 'dark'
+    setDark() {
+      this.color = "dark";
     },
 
-    setLight () {
-      this.color = 'light'
+    setLight() {
+      this.color = "light";
     },
 
-    toggleColor () {
+    toggleColor() {
       if (this.isDark) {
-        this.setLight()
+        this.setLight();
       } else {
-        this.setDark()
+        this.setDark();
       }
-    }
-  }
-}
+    },
+  },
+};

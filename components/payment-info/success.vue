@@ -5,31 +5,28 @@
       best out-of-this-world experience for you and our users.
     </sys-paragraph-1>
 
-    <img
-      alt="Pop!_OS"
-      src="~/assets/images/payment/logo.png"
-    >
+    <img alt="Pop!_OS" src="~/assets/images/payment/logo.png" />
   </div>
 </template>
 
 <style scoped>
-  div {
-    padding: 6rem 0;
-  }
+div {
+  padding: 6rem 0;
+}
 
-  p {
-    max-width: 25ch;
-    margin: 0 auto 3rem;
-  }
+p {
+  max-width: 25ch;
+  margin: 0 auto 3rem;
+}
 
-  img {
-    display: block;
-    margin: 0 auto;
-  }
+img {
+  display: block;
+  margin: 0 auto;
+}
 </style>
 
 <script>
-  export default {
-    name: 'PaymentInfoSuccess'
-  }
+export default {
+  name: "PaymentInfoSuccess",
+};
 </script>

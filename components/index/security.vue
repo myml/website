@@ -9,15 +9,15 @@
         <source
           type="image/webp"
           :srcset="require('~/assets/images/index/security.png?webp&size=700')"
-        >
+        />
         <source
           type="image/png"
           :srcset="require('~/assets/images/index/security.png?size=700')"
-        >
+        />
         <img
           alt="Robot performing ship security"
           src="~/assets/images/index/security.png?size=700"
-        >
+        />
       </picture>
     </div>
 
@@ -26,9 +26,9 @@
 
       <sys-paragraph-1>
         Pop!_OS encrypts your installation by default, and is the only Linux
-        distribution that enables pre-installed full-disk encryption out of the box.
-        A unique private encryption key is generated during setup after you receive
-        your computer.
+        distribution that enables pre-installed full-disk encryption out of the
+        box. A unique private encryption key is generated during setup after you
+        receive your computer.
       </sys-paragraph-1>
     </div>
 
@@ -67,115 +67,113 @@
 </template>
 
 <style scoped>
+section {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-rows: repeat(4, auto);
+  margin: 4rem auto;
+  max-width: 1280px;
+  padding: 0 1rem;
+  width: 100%;
+}
+
+.copy {
+  grid-column: 1 / 2;
+  margin: 0 auto 1rem;
+  max-width: 80ch;
+}
+
+.copy > h2 {
+  margin: 0;
+}
+
+.image {
+  align-self: center;
+  margin: 0 auto;
+  user-select: none;
+}
+
+.image img {
+  max-width: 400px;
+  width: 100%;
+}
+
+.block {
+  border-radius: 12px;
+  border: 1px solid transparent;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  max-width: 70ch;
+  margin: 0 auto;
+}
+
+.light-mode.block {
+  background-color: #fff;
+  border-color: #c8c8c8;
+  color: #272727;
+}
+
+.dark-mode.block {
+  background-color: #272727;
+  border-color: #171717;
+  color: #ccc;
+}
+
+.block h2 {
+  margin: 0 0 1rem;
+}
+
+.block p {
+  margin: 0;
+}
+
+@media (width >= 600px) {
+  .block {
+    padding: 2rem;
+  }
+}
+
+@media (width >= 800px) {
   section {
-    display: grid;
-    grid-gap: 1rem;
+    grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(4, auto);
-    margin: 4rem auto;
-    max-width: 1280px;
-    padding: 0 1rem;
-    width: 100%;
   }
 
   .copy {
-    grid-column: 1 / 2;
-    margin: 0 auto 1rem;
-    max-width: 80ch;
-  }
-
-  .copy > h2 {
-    margin: 0;
+    grid-column: 1 / 3;
   }
 
   .image {
-    align-self: center;
-    margin: 0 auto;
-    user-select: none;
+    grid-column: 1 / 3;
+  }
+}
+
+@media (width >= 1000px) {
+  section {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto 1fr 1fr auto;
+  }
+
+  .copy {
+    grid-column: 1 / 3;
+  }
+
+  .image {
+    grid-row: 2 / 4;
+    grid-column: 1 / 2;
   }
 
   .image img {
-    max-width: 400px;
-    width: 100%;
+    max-width: 100%;
   }
-
-  .block {
-    border-radius: 12px;
-    border: 1px solid transparent;
-    display: flex;
-    flex-direction: column;
-    padding: 1rem;
-    max-width: 70ch;
-    margin: 0 auto;
-  }
-
-  .light-mode.block {
-    background-color: #fff;
-    border-color: #C8C8C8;
-    color: #272727;
-  }
-
-  .dark-mode.block {
-    background-color: #272727;
-    border-color: #171717;
-    color: #ccc;
-  }
-
-  .block h2 {
-    margin: 0 0 1rem;
-  }
-
-  .block p {
-    margin: 0;
-  }
-
-  @media (width >= 600px) {
-    .block {
-      padding: 2rem;
-    }
-  }
-
-  @media (width >= 800px) {
-    section {
-      grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: repeat(4, auto);
-    }
-
-    .copy {
-      grid-column: 1 / 3;
-    }
-
-    .image {
-      grid-column: 1 / 3;
-    }
-  }
-
-  @media (width >= 1000px) {
-    section {
-      grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: auto 1fr 1fr auto;
-    }
-
-    .copy {
-      grid-column: 1 / 3;
-    }
-
-    .image {
-      grid-row: 2 / 4;
-      grid-column: 1 / 2;
-    }
-
-    .image img {
-      max-width: 100%;
-    }
-  }
+}
 </style>
 
 <script>
-  import color from '~/mixins/color'
+import color from "~/mixins/color";
 
-  export default {
-    mixins: [
-      color
-    ]
-  }
+export default {
+  mixins: [color],
+};
 </script>

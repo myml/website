@@ -1,9 +1,9 @@
-const prefix = 'fab'
-const iconName = 'mattermost'
-var width = 500
-var height = 500
-var ligatures = []
-var unicode = 'f420'
+const prefix = "fab";
+const iconName = "mattermost";
+var width = 500;
+var height = 500;
+var ligatures = [];
+var unicode = "f420";
 var svgPathData = `M 250.05,34.00
    C 251.95,34.04 253.85,34.11 255.65,34.20
      255.65,34.20 225.86,69.71 225.86,69.71
@@ -29,20 +29,14 @@ var svgPathData = `M 250.05,34.00
      199.82,201.57 205.42,185.04 219.06,168.19
      219.06,168.19 309.09,57.01 309.09,57.01
      310.24,55.59 312.17,54.43 314.15,54.29
-     314.15,54.29 314.15,54.29 314.15,54.29 Z`
+     314.15,54.29 314.15,54.29 314.15,54.29 Z`;
 
 const definition = {
   prefix,
   iconName,
-  icon: [
-    width,
-    height,
-    ligatures,
-    unicode,
-    svgPathData
-  ]
-}
+  icon: [width, height, ligatures, unicode, svgPathData],
+};
 
-export default definition
-export const faAngular = definition
-export { prefix, iconName, width, height, ligatures, unicode, svgPathData }
+export default definition;
+export const faAngular = definition;
+export { prefix, iconName, width, height, ligatures, unicode, svgPathData };

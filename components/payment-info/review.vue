@@ -1,9 +1,7 @@
 <template>
   <div>
     <template v-if="source">
-      <sys-paragraph-1 class="head">
-        Payment method
-      </sys-paragraph-1>
+      <sys-paragraph-1 class="head"> Payment method </sys-paragraph-1>
 
       <payment-method
         class="payment"
@@ -15,9 +13,7 @@
     </template>
 
     <template v-if="address">
-      <sys-paragraph-1 class="head">
-        Billing address
-      </sys-paragraph-1>
+      <sys-paragraph-1 class="head"> Billing address </sys-paragraph-1>
 
       <!-- eslint-disable-next-line vue/no-v-html -->
       <div v-html="formattedAddress" />
@@ -40,17 +36,11 @@
 
     <p class="terms">
       By completing the purchase, I agree with System76’s
-      <a
-        target="_blank"
-        rel="noopener"
-        href="https://system76.com/privacy"
-      >Privacy Policy</a>
-      and
-      <a
-        target="_blank"
-        rel="noopener"
-        href="https://system76.com/terms"
+      <a target="_blank" rel="noopener" href="https://system76.com/privacy"
+        >Privacy Policy</a
       >
+      and
+      <a target="_blank" rel="noopener" href="https://system76.com/terms">
         Terms and Conditions
       </a>
       .
@@ -81,85 +71,88 @@
 </template>
 
 <style scoped>
-  .head {
-    font-weight: bold;
-  }
+.head {
+  font-weight: bold;
+}
 
-  .change {
-    display: block;
-    margin: 1rem 0;
-  }
+.change {
+  display: block;
+  margin: 1rem 0;
+}
 
-  .subscription {
-    margin: 3rem auto;
-  }
+.subscription {
+  margin: 3rem auto;
+}
 
-  .terms {
-    text-align: center;
-    max-width: 45ch;
-    display: block;
-    margin: 2rem auto;
-    color: #574F4A;
-    font-size: 0.75rem;
-  }
+.terms {
+  text-align: center;
+  max-width: 45ch;
+  display: block;
+  margin: 2rem auto;
+  color: #574f4a;
+  font-size: 0.75rem;
+}
 </style>
 
 <script>
-  import { faChevronLeft } from '@fortawesome/free-solid-svg-icons'
-  import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-  import { mapGetters, mapState } from 'vuex'
+import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+import { mapGetters, mapState } from "vuex";
 
-  import PaymentMethod from '~/components/payment-method'
-  import SubscriptionPrice from '~/components/subscription-price'
+import PaymentMethod from "~/components/payment-method";
+import SubscriptionPrice from "~/components/subscription-price";
 
-  export default {
-    name: 'PaymentInfoReview',
+export default {
+  name: "PaymentInfoReview",
 
-    components: {
-      FontAwesomeIcon,
-      SubscriptionPrice,
-      PaymentMethod
+  components: {
+    FontAwesomeIcon,
+    SubscriptionPrice,
+    PaymentMethod,
+  },
+
+  computed: {
+    ...mapState("payment", [
+      "source",
+      "address",
+      "subscription",
+      "subscribing",
+    ]),
+    ...mapGetters("payment", ["alreadySubscribed", "canGoBack", "canReview"]),
+
+    faChevronLeft: () => faChevronLeft,
+
+    formattedAddress() {
+      const { attributes } = this.address;
+
+      const lines = [
+        [attributes["first-name"], attributes["last-name"]],
+        [attributes.address1],
+        [attributes.address2],
+        [attributes.city, attributes.state, attributes.zip],
+        [attributes.country],
+      ]
+        .map((l) => l.filter((v) => v != null))
+        .map((l) => l.join(" "))
+        .map((l) => l.trim())
+        .filter((l) => l !== "")
+        .map((l) => [l, "<br />"])
+        .reduce((a, b) => [...a, ...b], []);
+
+      return lines.splice(0, lines.length - 1).join("");
     },
+  },
 
-    computed: {
-      ...mapState('payment', ['source', 'address', 'subscription', 'subscribing']),
-      ...mapGetters('payment', ['alreadySubscribed', 'canGoBack', 'canReview']),
+  methods: {
+    async submit() {
+      const subRes = await this.$store.dispatch("payment/createSubscription", {
+        stripeId: this.source.attributes["stripe-id"],
+      });
 
-      faChevronLeft: () => faChevronLeft,
-
-      formattedAddress () {
-        const { attributes } = this.address
-
-        const lines = [
-          [attributes['first-name'], attributes['last-name']],
-          [attributes.address1],
-          [attributes.address2],
-          [attributes.city, attributes.state, attributes.zip],
-          [attributes.country]
-        ]
-          .map((l) => l.filter((v) => (v != null)))
-          .map((l) => l.join(' '))
-          .map((l) => l.trim())
-          .filter((l) => (l !== ''))
-          .map((l) => ([l, '<br />']))
-          .reduce((a, b) => [...a, ...b], [])
-
-        return lines
-          .splice(0, (lines.length - 1))
-          .join('')
+      if (subRes) {
+        await this.$store.dispatch("payment/gotoNextPage");
       }
     },
-
-    methods: {
-      async submit () {
-        const subRes = await this.$store.dispatch('payment/createSubscription', {
-          stripeId: this.source.attributes['stripe-id']
-        })
-
-        if (subRes) {
-          await this.$store.dispatch('payment/gotoNextPage')
-        }
-      }
-    }
-  }
+  },
+};
 </script>

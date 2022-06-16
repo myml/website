@@ -1,4 +1,4 @@
-version: '3'
+version: "3"
 
 services:
   mdbook:
@@ -15,6 +15,6 @@ services:
       - serve
       - /docs
       - --hostname
-      - '0.0.0.0'
+      - "0.0.0.0"
       - --port
-      - '3001'
+      - "3001"

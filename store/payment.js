@@ -1,260 +1,263 @@
 const REQUEST_HEADERS = {
-  Accept: 'application/json',
-  'Content-Type': 'application/json',
-  'User-Agent': 'pop-os/website (https://github.com/pop-os/website)'
-}
+  Accept: "application/json",
+  "Content-Type": "application/json",
+  "User-Agent": "pop-os/website (https://github.com/pop-os/website)",
+};
 
 export const state = () => ({
   showing: false,
   subscribing: false,
 
   error: null,
-  page: 'support',
+  page: "support",
 
   address: null,
   source: null,
   subscription: null,
 
   addresses: [],
-  sources: []
-})
+  sources: [],
+});
 
 export const getters = {
-  alreadySubscribed (state) {
-    return (state.subscription != null)
+  alreadySubscribed(state) {
+    return state.subscription != null;
   },
 
-  canGoBack (state) {
-    return false
+  canGoBack(state) {
+    return false;
   },
 
-  canReview (state) {
-    return (state.source != null)
+  canReview(state) {
+    return state.source != null;
   },
 
-  canSelectSources (state) {
-    return (state.sources.length > 0)
+  canSelectSources(state) {
+    return state.sources.length > 0;
   },
 
-  currentProgress (state) {
+  currentProgress(state) {
     switch (state.page) {
-      case 'support':
-        return 1
+      case "support":
+        return 1;
 
-      case 'billing-select':
-      case 'billing-create':
-        return 2
+      case "billing-select":
+      case "billing-create":
+        return 2;
 
-      case 'review':
-        return 3
+      case "review":
+        return 3;
 
-      case 'success':
-      case 'error':
-        return 4
+      case "success":
+      case "error":
+        return 4;
     }
   },
 
-  defaultBillingPage (state) {
+  defaultBillingPage(state) {
     if (getters.canSelectSources) {
-      return 'billing-select'
+      return "billing-select";
     } else {
-      return 'billing-create'
+      return "billing-create";
     }
   },
 
-  nextPage (state, getters) {
+  nextPage(state, getters) {
     if (getters.alreadySubscribed) {
-      return 'success'
+      return "success";
     }
 
     switch (state.page) {
-      case 'support':
-        return getters.defaultBillingPage
+      case "support":
+        return getters.defaultBillingPage;
 
-      case 'billing-select':
-      case 'billing-create':
-        return 'review'
+      case "billing-select":
+      case "billing-create":
+        return "review";
 
-      case 'error':
-        return 'support'
+      case "error":
+        return "support";
 
-      case 'review':
-        return 'success'
+      case "review":
+        return "success";
 
       default:
-        return null
+        return null;
     }
   },
 
-  previousPage (state, getters) {
+  previousPage(state, getters) {
     switch (state.page) {
-      case 'billing-select':
-        return 'support'
+      case "billing-select":
+        return "support";
 
-      case 'billing-create':
+      case "billing-create":
         if (getters.canSelectSources) {
-          return 'billing-select'
+          return "billing-select";
         } else {
-          return 'support'
+          return "support";
         }
 
-      case 'review':
-        return 'billing-select'
+      case "review":
+        return "billing-select";
 
-      case 'success':
-        return 'review'
+      case "success":
+        return "review";
 
       default:
-        return null
+        return null;
     }
   },
 
-  showProgress (state) {
-    return (state.page !== 'success' && state.page !== 'error')
+  showProgress(state) {
+    return state.page !== "success" && state.page !== "error";
   },
 
-  sourceId (state) {
+  sourceId(state) {
     if (state.source != null) {
-      return state.source.id
+      return state.source.id;
     } else {
-      return null
+      return null;
     }
-  }
-}
+  },
+};
 
 export const mutations = {
-  setShowing (state, value) {
-    const absValue = (value != null) ? value : !state.showing
+  setShowing(state, value) {
+    const absValue = value != null ? value : !state.showing;
 
     if (absValue) {
-      state.showing = true
+      state.showing = true;
     } else {
-      state.showing = false
-      state.page = 'support'
-      this.error = null
+      state.showing = false;
+      state.page = "support";
+      this.error = null;
     }
   },
 
-  setSubscribing (state, value) {
-    state.subscribing = value
+  setSubscribing(state, value) {
+    state.subscribing = value;
   },
 
-  setError (state, message) {
-    state.error = message
-    state.page = 'error'
+  setError(state, message) {
+    state.error = message;
+    state.page = "error";
   },
 
-  setPage (state, page) {
-    state.page = page
-    this.error = null
+  setPage(state, page) {
+    state.page = page;
+    this.error = null;
   },
 
-  setAddress (state, data) {
-    state.address = data
+  setAddress(state, data) {
+    state.address = data;
   },
 
-  setSource (state, data) {
-    state.source = data
+  setSource(state, data) {
+    state.source = data;
   },
 
-  setSubscription (state, data) {
-    state.subscription = data
+  setSubscription(state, data) {
+    state.subscription = data;
   },
 
-  setSources (state, data) {
-    state.sources = data
+  setSources(state, data) {
+    state.sources = data;
   },
 
-  setAddresses (state, data) {
-    state.addresses = data
-  }
-}
+  setAddresses(state, data) {
+    state.addresses = data;
+  },
+};
 
 export const actions = {
-  async gotoPreviousPage ({ commit, getters }) {
+  async gotoPreviousPage({ commit, getters }) {
     if (getters.previousPage == null) {
-      commit('setShowing', false)
+      commit("setShowing", false);
     } else {
-      commit('setPage', getters.previousPage)
+      commit("setPage", getters.previousPage);
     }
   },
 
-  async gotoNextPage ({ commit, getters }) {
+  async gotoNextPage({ commit, getters }) {
     if (getters.nextPage == null) {
-      commit('setShowing', false)
+      commit("setShowing", false);
     } else {
-      commit('setPage', getters.nextPage)
+      commit("setPage", getters.nextPage);
     }
   },
 
-  async fetchData ({ dispatch }) {
+  async fetchData({ dispatch }) {
     const [apiRes, sponsorRes] = await Promise.all([
-      dispatch('fetchApiData'),
-      dispatch('fetchSponsorData')
-    ])
+      dispatch("fetchApiData"),
+      dispatch("fetchSponsorData"),
+    ]);
 
-    return (apiRes && sponsorRes)
+    return apiRes && sponsorRes;
   },
 
-  async fetchApiData ({ commit }) {
-    const res = await fetch(`${process.env.API_URL}/transactions/sources?filter[type]=stripe&filter[user]=${this.$auth.user.id}&include=address`, {
-      method: 'GET',
-      headers: new Headers({
-        ...REQUEST_HEADERS,
-        Authorization: this.$auth.$storage._state['_token.system76'],
-        'Content-Type': 'application/vnd.api+json',
-        Accept: 'application/vnd.api+json'
-      })
-    })
+  async fetchApiData({ commit }) {
+    const res = await fetch(
+      `${process.env.API_URL}/transactions/sources?filter[type]=stripe&filter[user]=${this.$auth.user.id}&include=address`,
+      {
+        method: "GET",
+        headers: new Headers({
+          ...REQUEST_HEADERS,
+          Authorization: this.$auth.$storage._state["_token.system76"],
+          "Content-Type": "application/vnd.api+json",
+          Accept: "application/vnd.api+json",
+        }),
+      }
+    );
 
     if (res.ok) {
-      const body = await res.json()
+      const body = await res.json();
 
-      commit('setSources', body.data || [])
-      commit('setAddresses', body.included || [])
+      commit("setSources", body.data || []);
+      commit("setAddresses", body.included || []);
 
-      return true
+      return true;
     } else {
-      commit('setError', 'Unable to talk to server')
+      commit("setError", "Unable to talk to server");
 
-      return false
+      return false;
     }
   },
 
-  async fetchSponsorData ({ commit }) {
+  async fetchSponsorData({ commit }) {
     const res = await fetch(`${process.env.SPONSOR_URL}/subscriptions`, {
-      method: 'GET',
+      method: "GET",
       headers: new Headers({
         ...REQUEST_HEADERS,
-        Authorization: this.$auth.$storage._state['_token.system76']
-      })
-    })
+        Authorization: this.$auth.$storage._state["_token.system76"],
+      }),
+    });
 
     if (res.ok) {
-      const body = await res.json()
+      const body = await res.json();
 
       if (body.length > 0) {
-        commit('setSubscription', body[0])
+        commit("setSubscription", body[0]);
       } else {
-        commit('setSubscription', null)
+        commit("setSubscription", null);
       }
 
-      return true
+      return true;
     } else {
-      commit('setError', 'Unable to talk to server')
+      commit("setError", "Unable to talk to server");
 
-      return false
+      return false;
     }
   },
 
-  async createAddress ({ commit, state }, fields) {
+  async createAddress({ commit, state }, fields) {
     const res = await fetch(`${process.env.API_URL}/geography/addresses`, {
-      method: 'POST',
+      method: "POST",
       headers: new Headers({
         ...REQUEST_HEADERS,
-        Authorization: this.$auth.$storage._state['_token.system76'],
-        'Content-Type': 'application/vnd.api+json',
-        Accept: 'application/vnd.api+json'
+        Authorization: this.$auth.$storage._state["_token.system76"],
+        "Content-Type": "application/vnd.api+json",
+        Accept: "application/vnd.api+json",
       }),
       body: JSON.stringify({
         address: {
@@ -268,93 +271,93 @@ export const actions = {
           zip: fields.zip,
           country: fields.country,
           user_id: this.$auth.user.id,
-          shipping: false
-        }
-      })
-    })
+          shipping: false,
+        },
+      }),
+    });
 
     if (res.ok) {
-      const body = await res.json()
+      const body = await res.json();
 
-      commit('setAddress', body.data)
+      commit("setAddress", body.data);
 
-      return true
+      return true;
     } else {
-      commit('setError', 'Error creating address')
+      commit("setError", "Error creating address");
 
-      return false
+      return false;
     }
   },
 
-  async createSource ({ commit, dispatch, state }, { addressId, token }) {
+  async createSource({ commit, dispatch, state }, { addressId, token }) {
     const res = await fetch(`${process.env.API_URL}/transactions/sources`, {
-      method: 'POST',
+      method: "POST",
       headers: new Headers({
         ...REQUEST_HEADERS,
-        Authorization: this.$auth.$storage._state['_token.system76'],
-        'Content-Type': 'application/vnd.api+json',
-        Accept: 'application/vnd.api+json'
+        Authorization: this.$auth.$storage._state["_token.system76"],
+        "Content-Type": "application/vnd.api+json",
+        Accept: "application/vnd.api+json",
       }),
       body: JSON.stringify({
         data: {
-          type: 'transactions-source',
+          type: "transactions-source",
           attributes: {
             token: token,
-            type: 'stripe'
+            type: "stripe",
           },
           relationships: {
             user: { data: { id: this.$auth.user.id } },
-            address: { data: { id: addressId } }
-          }
-        }
-      })
-    })
+            address: { data: { id: addressId } },
+          },
+        },
+      }),
+    });
 
     if (res.ok) {
-      const body = await res.json()
+      const body = await res.json();
 
-      commit('setSource', body.data)
+      commit("setSource", body.data);
 
-      return true
+      return true;
     } else {
-      commit('setError', 'Error creating payment method')
+      commit("setError", "Error creating payment method");
 
-      return false
+      return false;
     }
   },
 
-  async createSubscription ({ commit, state }, { stripeId }) {
-    commit('setSubscribing', true)
+  async createSubscription({ commit, state }, { stripeId }) {
+    commit("setSubscribing", true);
 
     const res = await fetch(`${process.env.SPONSOR_URL}/subscriptions`, {
-      method: 'POST',
+      method: "POST",
       headers: new Headers({
         ...REQUEST_HEADERS,
-        Authorization: this.$auth.$storage._state['_token.system76']
+        Authorization: this.$auth.$storage._state["_token.system76"],
       }),
       body: JSON.stringify({
         stripe_customer_id: this.$auth.user.stripeId,
-        stripe_source_id: stripeId
-      })
-    })
+        stripe_source_id: stripeId,
+      }),
+    });
 
     if (res.ok) {
-      const body = await res.json()
+      const body = await res.json();
 
-      commit('setSubscription', body)
-      commit('setSubscribing', false)
+      commit("setSubscription", body);
+      commit("setSubscribing", false);
 
-      return true
+      return true;
     } else if (res.status === 402) {
-      commit('setError', 'Payment failed')
-      commit('setSubscribing', false)
+      commit("setError", "Payment failed");
+      commit("setSubscribing", false);
 
-      return false
+      return false;
     } else {
-      commit('setError', 'Error creating subscription')
-      commit('setSubscribing', false)
+      commit("setError", "Error creating subscription");
+      commit("setSubscribing", false);
 
-      return false
+      return false;
     }
-  }
-}
+  },
+};

@@ -8,35 +8,35 @@
 </template>
 
 <style scoped>
-  .container {
-    align-content: center;
-    align-items: center;
-    display: flex;
-    height: 100%;
-    justify-content: center;
-    padding: 1rem;
-    text-align: center;
-    width: 100%;
-  }
+.container {
+  align-content: center;
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  padding: 1rem;
+  text-align: center;
+  width: 100%;
+}
 </style>
 
 <script>
-  export default {
-    props: {
-      error: {
-        type: Object,
-        required: true
-      }
+export default {
+  props: {
+    error: {
+      type: Object,
+      required: true,
+    },
+  },
+
+  computed: {
+    message() {
+      return this.error.message;
     },
 
-    computed: {
-      message () {
-        return this.error.message
-      },
-
-      status () {
-        return this.error.statusCode || 404
-      }
-    }
-  }
+    status() {
+      return this.error.statusCode || 404;
+    },
+  },
+};
 </script>

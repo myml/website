@@ -17,30 +17,30 @@
 </template>
 
 <style scoped>
-  img {
-    display: block;
-    margin: 0 auto;
-  }
+img {
+  display: block;
+  margin: 0 auto;
+}
 
-  p {
-    max-width: 40ch;
-    margin: 3rem auto;
-    text-align: center;
-  }
+p {
+  max-width: 40ch;
+  margin: 3rem auto;
+  text-align: center;
+}
 
-  .buttons {
-    flex-direction: row-reverse;
-  }
+.buttons {
+  flex-direction: row-reverse;
+}
 </style>
 
 <script>
-  import { mapState } from 'vuex'
+import { mapState } from "vuex";
 
-  export default {
-    name: 'PaymentInfoError',
+export default {
+  name: "PaymentInfoError",
 
-    computed: {
-      ...mapState('payment', ['error'])
-    }
-  }
+  computed: {
+    ...mapState("payment", ["error"]),
+  },
+};
 </script>

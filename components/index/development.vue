@@ -4,9 +4,9 @@
       <sys-header-2>Development toolkits work flawlessly</sys-header-2>
 
       <sys-paragraph-1>
-        Develop software out of the box with a vast array of libraries and tools at
-        your disposal. Pop!_OS uses APT and Flatpak package management, meaning it’s
-        easy to install, remove, and update all software on the OS.
+        Develop software out of the box with a vast array of libraries and tools
+        at your disposal. Pop!_OS uses APT and Flatpak package management,
+        meaning it’s easy to install, remove, and update all software on the OS.
       </sys-paragraph-1>
     </div>
 
@@ -15,8 +15,8 @@
 
       <sys-paragraph-1>
         Code life into the machinery of the future. Perfect your model for
-        predicting a hurricane’s path, and use Tensorman to keep organized
-        along the way.
+        predicting a hurricane’s path, and use Tensorman to keep organized along
+        the way.
       </sys-paragraph-1>
 
       <ul class="list">
@@ -126,183 +126,181 @@
 </template>
 
 <style scoped>
-  section {
-    display: grid;
-    grid-gap: 1rem;
-    grid-template-rows: repeat(5, auto);
-    margin: 4rem auto;
-    max-width: 1280px;
-    padding: 0 1rem;
-    width: 100%;
-  }
+section {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-rows: repeat(5, auto);
+  margin: 4rem auto;
+  max-width: 1280px;
+  padding: 0 1rem;
+  width: 100%;
+}
 
-  .copy {
-    grid-column: 1 / 2;
-    margin: 0 auto 1rem;
-    max-width: 80ch;
-  }
+.copy {
+  grid-column: 1 / 2;
+  margin: 0 auto 1rem;
+  max-width: 80ch;
+}
 
-  .copy > *:first-child {
-    margin-top: 0;
-    text-align: center;
-  }
+.copy > *:first-child {
+  margin-top: 0;
+  text-align: center;
+}
 
-  .copy > *:last-child {
-    margin-bottom: 0;
-  }
+.copy > *:last-child {
+  margin-bottom: 0;
+}
 
+.block {
+  align-content: stretch;
+  align-items: stretch;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-rows: repeat(4, auto);
+  justify-content: stretch;
+  margin: 0 auto;
+  max-width: 700px;
+}
+
+.light-mode.block {
+  background-color: #fff;
+  border-color: #c8c8c8;
+  color: #272727;
+}
+
+.dark-mode.block {
+  background-color: #272727;
+  border-color: #171717;
+  color: #ccc;
+}
+
+.block > * {
+  margin: 0;
+}
+
+.block h2 {
+  margin: 1rem 1rem 0;
+}
+
+.block p {
+  margin: 0 1rem;
+}
+
+ul {
+  align-content: flex-start;
+  align-items: flex-start;
+  border: 0px solid transparent;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-around;
+  list-style: none;
+  margin: 0;
+  padding: 0 1rem;
+}
+
+.light-mode ul {
+  border-color: #c8c8c8;
+}
+
+.dark-mode ul {
+  border-color: #171717;
+}
+
+ul li {
+  font-size: 1rem;
+  height: 1rem;
+  line-height: 1rem;
+  margin: 0.75rem 0 0.75rem calc(1rem + 1ch);
+  position: relative;
+}
+
+ul li::before {
+  background-color: #ffad00;
+  border-radius: 50%;
+  bottom: 0;
+  content: "";
+  height: 1rem;
+  left: calc(-1rem - 1ch);
+  position: absolute;
+  width: 1rem;
+}
+
+ul li::after {
+  background-color: #303030;
+  border-radius: 50%;
+  bottom: 4px;
+  content: "";
+  height: calc(1rem - 8px);
+  left: calc(-1rem - 1ch + 4px);
+  position: absolute;
+  width: calc(1rem - 8px);
+}
+
+.block div {
+  margin: 0 0.4rem 0.4rem;
+}
+
+.block div > * {
+  margin: 0;
+}
+
+@media (width >= 60ch) {
   .block {
-    align-content: stretch;
-    align-items: stretch;
-    border-radius: 12px;
-    border: 1px solid transparent;
-    display: grid;
-    grid-gap: 1rem;
-    grid-template-rows: repeat(4, auto);
-    justify-content: stretch;
-    margin: 0 auto;
-    max-width: 700px;
-  }
-
-  .light-mode.block {
-    background-color: #fff;
-    border-color: #C8C8C8;
-    color: #272727;
-  }
-
-  .dark-mode.block {
-    background-color: #272727;
-    border-color: #171717;
-    color: #ccc;
-  }
-
-  .block > * {
-    margin: 0;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto 1fr auto;
   }
 
   .block h2 {
-    margin: 1rem 1rem 0;
+    margin: 1rem 1rem 0 0;
   }
 
   .block p {
-    margin: 0 1rem;
+    margin: 0 1rem 0 0;
   }
 
   ul {
-    align-content: flex-start;
-    align-items: flex-start;
-    border: 0px solid transparent;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    justify-content: space-around;
-    list-style: none;
-    margin: 0;
-    padding: 0 1rem;
-  }
-
-  .light-mode ul {
-    border-color: #C8C8C8;
-  }
-
-  .dark-mode ul {
-    border-color: #171717;
+    border-bottom-width: 0;
+    border-right-width: 1px;
+    grid-column: 1 / 2;
+    grid-row: 1 / 4;
+    padding: 1rem;
+    width: 20ch;
   }
 
   ul li {
-    font-size: 1rem;
-    height: 1rem;
-    line-height: 1rem;
-    margin: 0.75rem 0 0.75rem calc(1rem + 1ch);
-    position: relative;
-  }
-
-  ul li::before {
-    background-color: #FFAD00;
-    border-radius: 50%;
-    bottom: 0;
-    content: "";
-    height: 1rem;
-    left: calc(-1rem - 1ch);
-    position: absolute;
-    width: 1rem;
-  }
-
-  ul li::after {
-    background-color: #303030;
-    border-radius: 50%;
-    bottom: 4px;
-    content: "";
-    height: calc(1rem - 8px);
-    left: calc(-1rem - 1ch + 4px);
-    position: absolute;
-    width: calc(1rem - 8px);
+    margin: 0 0 0 calc(1rem + 1ch);
   }
 
   .block div {
-    margin: 0 0.4rem 0.4rem;
+    margin: 0 1rem 0.4rem -0.6rem;
+  }
+}
+
+@media (width >= 750px) {
+  .block {
+    padding: 0 1rem;
+  }
+}
+
+@media (width >= 130ch) {
+  section {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto repeat(2, 1fr);
   }
 
-  .block div > * {
-    margin: 0;
+  .copy {
+    grid-column: 1 / 3;
   }
-
-  @media (width >= 60ch) {
-    .block {
-      grid-template-columns: auto auto;
-      grid-template-rows: auto 1fr auto;
-    }
-
-    .block h2 {
-      margin: 1rem 1rem 0 0;
-    }
-
-    .block p {
-      margin: 0 1rem 0 0;
-    }
-
-    ul {
-      border-bottom-width: 0;
-      border-right-width: 1px;
-      grid-column: 1 / 2;
-      grid-row: 1 / 4;
-      padding: 1rem;
-      width: 20ch;
-    }
-
-    ul li {
-      margin: 0 0 0 calc(1rem + 1ch);
-    }
-
-    .block div {
-      margin: 0 1rem 0.4rem -0.6rem;
-    }
-  }
-
-  @media (width >= 750px) {
-    .block {
-      padding: 0 1rem;
-    }
-  }
-
-  @media (width >= 130ch) {
-    section {
-      grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: auto repeat(2, 1fr)
-    }
-
-    .copy {
-      grid-column: 1 / 3;
-    }
-  }
+}
 </style>
 
 <script>
-  import color from '~/mixins/color'
+import color from "~/mixins/color";
 
-  export default {
-    mixins: [
-      color
-    ]
-  }
+export default {
+  mixins: [color],
+};
 </script>

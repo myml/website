@@ -2,9 +2,7 @@
   <div :class="$style.layout">
     <sys-omnibar>
       <template v-slot:global>
-        <a href="https://system76.com/specials">
-          Specials
-        </a>
+        <a href="https://system76.com/specials"> Specials </a>
       </template>
       <template v-slot:copy>
         <a
@@ -16,9 +14,7 @@
         </a>
       </template>
       <template v-slot:local>
-        <button @click.prevent="toggleDownload">
-          Download
-        </button>
+        <button @click.prevent="toggleDownload">Download</button>
       </template>
     </sys-omnibar>
 
@@ -55,90 +51,81 @@
       @subscribe="toggleSubscribeModal"
     />
 
-    <light-box
-      :active="isDownloadActive"
-      @input="toggleDownload"
-    >
+    <light-box :active="isDownloadActive" @input="toggleDownload">
       <download-info />
     </light-box>
 
-    <light-box
-      :active="isPaymentActive"
-      @input="togglePayment"
-    >
+    <light-box :active="isPaymentActive" @input="togglePayment">
       <payment-info />
     </light-box>
 
     <light-box :active="isSubscribeModalActive">
-      <modal-newsletter
-        validate-groups
-        @close="toggleSubscribeModal"
-      />
+      <modal-newsletter validate-groups @close="toggleSubscribeModal" />
     </light-box>
   </div>
 </template>
 
 <style module>
-  .layout {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    min-width: 100%;
-  }
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-width: 100%;
+}
 
-  .page {
-    flex: 1 0 auto;
-  }
+.page {
+  flex: 1 0 auto;
+}
 
-  .specials {
-    color: #fff;
-    text-decoration: none;
-  }
+.specials {
+  color: #fff;
+  text-decoration: none;
+}
 </style>
 
 <script>
-  import { mapGetters, mapState } from 'vuex'
+import { mapGetters, mapState } from "vuex";
 
-  import DownloadInfo from '~/components/download-info'
-  import LightBox from '~/components/light-box'
-  import ModalNewsletter from '~/components/modal-newsletter'
-  import PaymentInfo from '~/components/payment-info'
+import DownloadInfo from "~/components/download-info";
+import LightBox from "~/components/light-box";
+import ModalNewsletter from "~/components/modal-newsletter";
+import PaymentInfo from "~/components/payment-info";
 
-  export default {
-    components: {
-      DownloadInfo,
-      ModalNewsletter,
-      PaymentInfo,
-      LightBox
+export default {
+  components: {
+    DownloadInfo,
+    ModalNewsletter,
+    PaymentInfo,
+    LightBox,
+  },
+
+  computed: {
+    ...mapGetters("download", { isDownloadActive: "showing" }),
+    ...mapGetters("newsletter", { isSubscribeModalActive: "showing" }),
+    ...mapState("payment", { isPaymentActive: "showing" }),
+
+    isAuthenticated() {
+      return this.$auth.loggedIn;
     },
 
-    computed: {
-      ...mapGetters('download', { isDownloadActive: 'showing' }),
-      ...mapGetters('newsletter', { isSubscribeModalActive: 'showing' }),
-      ...mapState('payment', { isPaymentActive: 'showing' }),
+    isStaff() {
+      return this.$auth.user && this.$auth.user.staff;
+    },
+  },
 
-      isAuthenticated () {
-        return this.$auth.loggedIn
-      },
-
-      isStaff () {
-        return this.$auth.user && this.$auth.user.staff
-      }
+  methods: {
+    toggleDownload() {
+      this.$store.dispatch("download/detectChannel");
+      this.$store.commit("download/toggleShowing");
     },
 
-    methods: {
-      toggleDownload () {
-        this.$store.dispatch('download/detectChannel')
-        this.$store.commit('download/toggleShowing')
-      },
+    togglePayment() {
+      this.$store.commit("payment/setShowing");
+    },
 
-      togglePayment () {
-        this.$store.commit('payment/setShowing')
-      },
-
-      toggleSubscribeModal () {
-        this.$store.commit('newsletter/toggleShowing')
-      }
-    }
-  }
+    toggleSubscribeModal() {
+      this.$store.commit("newsletter/toggleShowing");
+    },
+  },
+};
 </script>

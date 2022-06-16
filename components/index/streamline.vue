@@ -20,10 +20,7 @@
         keyboard-driven customizations, you’re empowered to navigate your
         workflow the way you’ve always wanted.
       </sys-paragraph-1>
-      <div
-        class="video-wrap"
-        @click.prevent="toggleVideo('SrWw2LeZ21U')"
-      >
+      <div class="video-wrap" @click.prevent="toggleVideo('SrWw2LeZ21U')">
         <div class="play-btn">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -39,7 +36,7 @@
           alt="Auto-tiling with Pop shell video"
           data-src="https://i.ytimg.com/vi/SrWw2LeZ21U/mqdefault.jpg"
           class="video"
-        >
+        />
       </div>
     </div>
 
@@ -48,16 +45,12 @@
 
       <sys-paragraph-1>
         Pop!_OS uses auto-tiling for the same reason that people hire
-        assistants: Organizing your work is incredibly time-consuming. Sure,
-        you could still move, resize, and arrange windows yourself, but why
-        spend the time when your OS does it for you? Auto-tiling helps you be
-        both organized and efficient, and is especially convenient on large
-        displays.
+        assistants: Organizing your work is incredibly time-consuming. Sure, you
+        could still move, resize, and arrange windows yourself, but why spend
+        the time when your OS does it for you? Auto-tiling helps you be both
+        organized and efficient, and is especially convenient on large displays.
       </sys-paragraph-1>
-      <div
-        class="video-wrap"
-        @click.prevent="toggleVideo('-fltwBKsMY0')"
-      >
+      <div class="video-wrap" @click.prevent="toggleVideo('-fltwBKsMY0')">
         <div class="play-btn">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -73,7 +66,7 @@
           alt="Auto-tiling with Pop shell video"
           data-src="https://i.ytimg.com/vi/-fltwBKsMY0/mqdefault.jpg"
           class="video"
-        >
+        />
       </div>
     </div>
 
@@ -81,14 +74,11 @@
       <sys-subheader-2>Workspaces</sys-subheader-2>
 
       <sys-paragraph-1>
-        Keep relevant content together and irrelevant content out of sight.
-        When the clutter overwhelms you, just toss it onto another desktop.
-        Problem solved.
+        Keep relevant content together and irrelevant content out of sight. When
+        the clutter overwhelms you, just toss it onto another desktop. Problem
+        solved.
       </sys-paragraph-1>
-      <div
-        class="video-wrap"
-        @click.prevent="toggleVideo('USQjxLP1Z5k')"
-      >
+      <div class="video-wrap" @click.prevent="toggleVideo('USQjxLP1Z5k')">
         <div class="play-btn">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -104,7 +94,7 @@
           alt="Pop!_OS workspaces video"
           data-src="https://i.ytimg.com/vi/USQjxLP1Z5k/mqdefault.jpg"
           class="video"
-        >
+        />
       </div>
     </div>
 
@@ -121,10 +111,7 @@
           <li>launch applications</li>
         </ul>
       </sys-paragraph-1>
-      <div
-        class="video-wrap"
-        @click.prevent="toggleVideo('aqj0cRTZaVE')"
-      >
+      <div class="video-wrap" @click.prevent="toggleVideo('aqj0cRTZaVE')">
         <div class="play-btn">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -140,7 +127,7 @@
           alt="Keyboard navigation video"
           data-src="https://i.ytimg.com/vi/aqj0cRTZaVE/mqdefault.jpg"
           class="video"
-        >
+        />
       </div>
     </div>
 
@@ -152,10 +139,7 @@
         Just remember to switch off of Steam when the boss walks in.
       </sys-paragraph-1>
 
-      <div
-        class="video-wrap"
-        @click.prevent="toggleVideo('1TSdFWY_U9A')"
-      >
+      <div class="video-wrap" @click.prevent="toggleVideo('1TSdFWY_U9A')">
         <div class="play-btn">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -171,7 +155,7 @@
           alt="Keyboard navigation video"
           data-src="https://i.ytimg.com/vi/1TSdFWY_U9A/mqdefault.jpg"
           class="video"
-        >
+        />
       </div>
     </div>
 
@@ -184,208 +168,204 @@
 </template>
 
 <style scoped>
+section {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-rows: repeat(5, auto);
+  margin: 4rem auto;
+  max-width: 1280px;
+  padding: 0 1rem;
+  width: 100%;
+}
+
+.copy {
+  grid-column: 1 / 2;
+  margin: 0 auto 1rem;
+  max-width: 80ch;
+}
+
+.copy > *:first-child {
+  margin-top: 0;
+  text-align: center;
+}
+
+.copy > *:last-child {
+  margin-bottom: 0;
+}
+
+.block {
+  border-radius: 12px;
+  border: 1px solid transparent;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.light-mode.block {
+  background-color: #fff;
+  border-color: #c8c8c8;
+  color: #272727;
+}
+
+.dark-mode.block {
+  background-color: #272727;
+  border-color: #171717;
+  color: #ccc;
+}
+
+.block h2 {
+  margin: 0 auto 1rem;
+  max-width: 80ch;
+}
+
+.block p {
+  align-self: center;
+  flex: 1 1 auto;
+  margin: 1rem auto;
+  max-width: 60ch;
+}
+
+.block:nth-child(4) p {
+  max-width: 53ch;
+}
+
+.block ul {
+  margin: 1rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.block ul li::before {
+  content: "- ";
+}
+
+.block .video-wrap {
+  cursor: pointer;
+  height: 0;
+  margin: 1rem 0 0;
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+}
+
+.video-wrap .play-btn {
+  position: absolute;
+  max-width: 700px;
+  width: 100px;
+  height: 100px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-25%, -25%);
+  z-index: 99;
+}
+
+.video-wrap .play-btn svg {
+  transition: all 0.2s ease;
+  fill: rgba(255, 255, 255, 0.8);
+  width: 50%;
+}
+
+.video-wrap .play-btn:hover svg,
+.video-wrap .play-btn:focus svg {
+  fill: #fff;
+}
+
+.block img {
+  bottom: 0;
+  cursor: pointer;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+}
+
+.youtube {
+  width: 90vw;
+}
+
+@media (width >= 900px) {
   section {
-    display: grid;
-    grid-gap: 1rem;
-    grid-template-rows: repeat(5, auto);
-    margin: 4rem auto;
-    max-width: 1280px;
-    padding: 0 1rem;
-    width: 100%;
-  }
-
-  .copy {
-    grid-column: 1 / 2;
-    margin: 0 auto 1rem;
-    max-width: 80ch;
-  }
-
-  .copy > *:first-child {
-    margin-top: 0;
-    text-align: center;
-  }
-
-  .copy > *:last-child {
-    margin-bottom: 0;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(2, auto);
   }
 
   .block {
-    border-radius: 12px;
-    border: 1px solid transparent;
-    display: flex;
-    flex-direction: column;
-    padding: 1rem;
+    padding: 2rem;
   }
 
-  .light-mode.block {
-    background-color: #fff;
-    border-color: #C8C8C8;
-    color: #272727;
+  .copy {
+    grid-column: 1 / 3;
+  }
+}
+
+@media (width >= 1280px) {
+  section {
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(3, auto);
   }
 
-  .dark-mode.block {
-    background-color: #272727;
-    border-color: #171717;
-    color: #ccc;
-  }
-
-  .block h2 {
+  .copy {
+    grid-column: 1 / span 6;
     margin: 0 auto 1rem;
     max-width: 80ch;
   }
 
-  .block p {
-    align-self: center;
-    flex: 1 1 auto;
-    margin: 1rem auto;
-    max-width: 60ch;
+  .block:nth-child(2) h2,
+  .block:nth-child(3) h2 {
+    margin: 0 0 1em;
   }
 
-  .block:nth-child(4) p {
-    max-width: 53ch;
+  .block:nth-child(2) {
+    grid-column: 1 / span 3;
   }
 
-  .block ul {
-    margin: 1rem 0 0;
-    padding: 0;
-    list-style: none;
+  .block:nth-child(3) {
+    grid-column: 4 / span 3;
   }
 
-  .block ul li::before {
-    content: "- ";
+  .block:nth-child(4) {
+    grid-column: 1 / span 2;
   }
 
-  .block .video-wrap {
-    cursor: pointer;
-    height: 0;
-    margin: 1rem 0 0;
-    overflow: hidden;
-    padding-bottom: 56.25%;
-    position: relative;
+  .block:nth-child(5) {
+    grid-column: 3 / span 2;
   }
 
-  .video-wrap .play-btn {
-    position: absolute;
-    max-width: 700px;
-    width: 100px;
-    height: 100px;
-    left: 50%;
-    top: 50%;
-    transform: translate(-25%, -25%);
-    z-index: 99;
-  }
-
-  .video-wrap .play-btn svg {
-    transition: all .2s ease;
-    fill: rgba(255,255,255, 0.8);
-    width: 50%;
-  }
-
-  .video-wrap .play-btn:hover svg,
-  .video-wrap .play-btn:focus svg {
-    fill: #fff;
-  }
-
-  .block img {
-    bottom: 0;
-    cursor: pointer;
-    height: 100%;
-    left: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 100%;
+  .block:nth-child(6) {
+    grid-column: 5 / span 2;
   }
 
   .youtube {
-    width: 90vw;
+    width: 60vw;
   }
-
-  @media (width >= 900px) {
-    section {
-      grid-template-columns: repeat(2, auto);
-      grid-template-rows: repeat(2, auto);
-    }
-
-    .block {
-      padding: 2rem;
-    }
-
-    .copy {
-      grid-column: 1 / 3;
-    }
-  }
-
-  @media (width >= 1280px) {
-
-    section {
-      grid-template-columns: repeat(6, 1fr);
-      grid-template-rows: repeat(3, auto);
-    }
-
-    .copy {
-      grid-column: 1 / span 6;
-      margin: 0 auto 1rem;
-      max-width: 80ch;
-    }
-
-    .block:nth-child(2) h2,
-    .block:nth-child(3) h2 {
-      margin: 0 0 1em;
-    }
-
-    .block:nth-child(2) {
-      grid-column: 1 / span 3;
-    }
-
-    .block:nth-child(3) {
-      grid-column: 4 / span 3;
-    }
-
-    .block:nth-child(4) {
-      grid-column: 1 / span 2;
-    }
-
-    .block:nth-child(5) {
-      grid-column: 3 / span 2;
-    }
-
-    .block:nth-child(6) {
-      grid-column: 5 / span 2;
-    }
-
-    .youtube {
-      width: 60vw;
-    }
-  }
+}
 </style>
 
 <script>
-  import LightBox from '~/components/light-box'
-  import YoutubeResponsive from '~/components/youtube-responsive'
-  import color from '~/mixins/color'
+import LightBox from "~/components/light-box";
+import YoutubeResponsive from "~/components/youtube-responsive";
+import color from "~/mixins/color";
 
-  export default {
+export default {
+  components: {
+    LightBox,
+    YoutubeResponsive,
+  },
 
-    components: {
-      LightBox,
-      YoutubeResponsive
+  mixins: [color],
+
+  data: () => ({
+    active: false,
+    video: null,
+  }),
+
+  methods: {
+    toggleVideo(video) {
+      this.video = video;
+      this.active = true;
     },
-
-    mixins: [
-      color
-    ],
-
-    data: () => ({
-      active: false,
-      video: null
-    }),
-
-    methods: {
-      toggleVideo (video) {
-        this.video = video
-        this.active = true
-      }
-    }
-  }
+  },
+};
 </script>

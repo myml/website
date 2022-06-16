@@ -43,34 +43,34 @@
 </template>
 
 <style scoped>
-  p {
-    max-width: 40ch;
-  }
+p {
+  max-width: 40ch;
+}
 
-  .subscription {
-    margin: 3rem auto;
-  }
+.subscription {
+  margin: 3rem auto;
+}
 </style>
 
 <script>
-  import { faChevronLeft } from '@fortawesome/free-solid-svg-icons'
-  import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-  import { mapGetters } from 'vuex'
+import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+import { mapGetters } from "vuex";
 
-  import SubscriptionPrice from '~/components/subscription-price'
+import SubscriptionPrice from "~/components/subscription-price";
 
-  export default {
-    name: 'PaymentInfoSupport',
+export default {
+  name: "PaymentInfoSupport",
 
-    components: {
-      FontAwesomeIcon,
-      SubscriptionPrice
-    },
+  components: {
+    FontAwesomeIcon,
+    SubscriptionPrice,
+  },
 
-    computed: {
-      ...mapGetters('payment', ['canGoBack']),
+  computed: {
+    ...mapGetters("payment", ["canGoBack"]),
 
-      faChevronLeft: () => faChevronLeft
-    }
-  }
+    faChevronLeft: () => faChevronLeft,
+  },
+};
 </script>

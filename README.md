@@ -8,7 +8,7 @@
 ---
 
 This repository is the [Nuxt.JS](https://nuxtjs.org/) single page website for
-Pop!_OS. It is viewable at https://pop.system76.com.
+Pop!_OS. It is viewable at <https://pop.system76.com>.
 
 ## Developing
 
@@ -29,8 +29,8 @@ extra work is needed as a developer.
 
 ## Pop!_Docs
 
-Pop!_OS documentation can be viewed at https://pop.system76.com/docs
+Pop!_OS documentation can be viewed at <https://pop.system76.com/docs>
 
 ### Editing
-Documentation can be viewed and edited on GitHub from the `/docs` directory.
 
+Documentation can be viewed and edited on GitHub from the `/docs` directory.

@@ -1,12 +1,7 @@
 <template>
   <div>
     <template v-if="$fetchState.pending">
-      <font-awesome-icon
-        :icon="faSpinner"
-        class="loading"
-        size="3x"
-        spin
-      />
+      <font-awesome-icon :icon="faSpinner" class="loading" size="3x" spin />
     </template>
 
     <template v-else-if="$fetchState.error">
@@ -24,16 +19,8 @@
       </p>
 
       <div class="grid">
-        <label
-          v-for="s in sources"
-          :key="s.id"
-        >
-          <input
-            v-model="sourceId"
-            type="radio"
-            name="method"
-            :value="s.id"
-          >
+        <label v-for="s in sources" :key="s.id">
+          <input v-model="sourceId" type="radio" name="method" :value="s.id" />
 
           <payment-method
             :brand="s.attributes.brand"
@@ -67,89 +54,91 @@
 </template>
 
 <style scoped>
-  .loading {
-    display: block;
-    margin: 2rem auto;
-  }
+.loading {
+  display: block;
+  margin: 2rem auto;
+}
 
-  p {
-    margin: 2rem 0;
-  }
+p {
+  margin: 2rem 0;
+}
 
-  .grid {
-    align-content: flex-start;
-    align-items: flex-start;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 2rem -1rem;
-  }
+.grid {
+  align-content: flex-start;
+  align-items: flex-start;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 2rem -1rem;
+}
 
-  label {
-    align-content: center;
-    align-items: center;
-    display: flex;
-    flex: 0 1 200px;
-    margin: 1rem;
-  }
+label {
+  align-content: center;
+  align-items: center;
+  display: flex;
+  flex: 0 1 200px;
+  margin: 1rem;
+}
 
-  label > input {
-    margin-right: 1ch;
-  }
+label > input {
+  margin-right: 1ch;
+}
 </style>
 
 <script>
-  import { faChevronLeft, faSpinner } from '@fortawesome/free-solid-svg-icons'
-  import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-  import { mapGetters, mapState } from 'vuex'
+import { faChevronLeft, faSpinner } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+import { mapGetters, mapState } from "vuex";
 
-  import PaymentMethod from '~/components/payment-method'
+import PaymentMethod from "~/components/payment-method";
 
-  export default {
-    name: 'PaymentInfoBillingSelect',
+export default {
+  name: "PaymentInfoBillingSelect",
 
-    components: {
-      FontAwesomeIcon,
-      PaymentMethod
-    },
+  components: {
+    FontAwesomeIcon,
+    PaymentMethod,
+  },
 
-    computed: {
-      ...mapState('payment', ['sources', 'addresses']),
-      ...mapGetters('payment', ['canGoBack']),
+  computed: {
+    ...mapState("payment", ["sources", "addresses"]),
+    ...mapGetters("payment", ["canGoBack"]),
 
-      faChevronLeft: () => faChevronLeft,
-      faSpinner: () => faSpinner,
+    faChevronLeft: () => faChevronLeft,
+    faSpinner: () => faSpinner,
 
-      sourceId: {
-        get () {
-          return this.$store.getters['payment/sourceId']
-        },
+    sourceId: {
+      get() {
+        return this.$store.getters["payment/sourceId"];
+      },
 
-        set (id) {
-          const source = this.sources.find((o) => (o.id === id))
-          this.$store.commit('payment/setSource', source)
+      set(id) {
+        const source = this.sources.find((o) => o.id === id);
+        this.$store.commit("payment/setSource", source);
 
-          if (source != null) {
-            const address = this.addresses.find((a) => (a.id === source.relationships.address.data.id))
+        if (source != null) {
+          const address = this.addresses.find(
+            (a) => a.id === source.relationships.address.data.id
+          );
 
-            this.$store.commit('payment/setAddress', address)
-          } else {
-            this.$store.commit('payment/setAddress', null)
-          }
+          this.$store.commit("payment/setAddress", address);
+        } else {
+          this.$store.commit("payment/setAddress", null);
         }
-      }
+      },
     },
+  },
 
-    async fetch () {
-      if (this.sources.length < 1) {
-        await this.$store.dispatch('payment/fetchData')
-      }
-
-      if (this.sources.length < 1) {
-        this.$store.commit('payment/setPage', 'billing-create')
-      } else if (this.sourceId == null) {
-        this.sourceId = this.sources[0].id
-      }
+  async fetch() {
+    if (this.sources.length < 1) {
+      await this.$store.dispatch("payment/fetchData");
     }
-  }
+
+    if (this.sources.length < 1) {
+      this.$store.commit("payment/setPage", "billing-create");
+    } else if (this.sourceId == null) {
+      this.sourceId = this.sources[0].id;
+    }
+  },
+};
 </script>

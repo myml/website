@@ -1,5 +1,5 @@
-import Vue from 'vue'
+import Vue from "vue";
 
-import { install } from '@system76/forms'
+import { install } from "@system76/forms";
 
-install(Vue)
+install(Vue);
