@@ -59,18 +59,7 @@ export default {
       { rel: "mask-icon", href: "/safari-pinned-tab.svg", color: "#46bac8" },
     ],
 
-    script: [
-      {
-        async: true,
-        defer: true,
-        "data-domain": "pop.system76.com",
-        src: "https://plausible.io/js/plausible.js",
-      },
-      {
-        innerHTML:
-          "window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }",
-      },
-    ],
+    script: [],
 
     __dangerouslyDisableSanitizers: ["script"],
   },
@@ -102,38 +91,9 @@ export default {
     "~/plugins/forms",
     "~/plugins/hal",
     "~/plugins/lazyload",
-    "~/plugins/i18n",
   ],
 
   optimizedImages: {
     optimizeImages: true,
-  },
-
-  auth: {
-    redirect: {
-      callback: "/auth/callback",
-      login: "/auth/login",
-      logout: "/auth/logout",
-    },
-    strategies: {
-      system76: {
-        scheme: "~/modules/auth-schema",
-        grantType: "authorization_code",
-        responseType: "code",
-        clientId: config.AUTH_CLIENT_ID,
-        scope: ["profile:write"],
-        endpoints: {
-          authorization: `${config.AUTH_URL}/oauth/authorize`,
-          token: `${config.AUTH_URL}/oauth/token`,
-          userInfo: `${config.AUTH_URL}/api/settings`,
-          logout: `${config.AUTH_URL}/logout?redirect_uri=${encodeURIComponent(
-            config.PUBLIC_URL
-          )}`,
-        },
-        user: {
-          property: "user",
-        },
-      },
-    },
   },
 };

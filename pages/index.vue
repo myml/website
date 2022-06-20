@@ -1,15 +1,20 @@
 <template>
-  <main :class="classes">
-    <index-streamline />
-    <index-development />
-    <index-testimonials />
-    <index-security />
-    <index-software />
-    <index-other-features />
+  <main :class="classes" v-if="settings">
+    <deepin-why :setting="settings.why"></deepin-why>
+    <deepin-office :setting="settings.office"></deepin-office>
+    <deepin-production :setting="settings.production"></deepin-production>
+    <deepin-news :setting="settings.news"></deepin-news>
+    <deepin-testimonials :setting="settings.testimonia"></deepin-testimonials>
+    <iframe src="https://bbs.deepin.org/footer"></iframe>
   </main>
 </template>
 
 <style scoped>
+iframe {
+  width: 100%;
+  height: 259px;
+  border: none;
+}
 main {
   display: flex;
   flex-direction: column;
@@ -35,34 +40,34 @@ main {
 </style>
 
 <script>
-import IndexDevelopment from "~/components/index/development";
-import IndexFoot from "~/components/index/foot";
-import IndexFootnotes from "~/components/index/footnotes";
-import IndexHead from "~/components/index/head";
-import IndexOtherFeatures from "~/components/index/other-features";
-import IndexPopPi from "~/components/index/pop-pi";
-import IndexSecurity from "~/components/index/security";
-import IndexSoftware from "~/components/index/software";
-import IndexStreamline from "~/components/index/streamline";
-import IndexSystem76 from "~/components/index/system76";
-import IndexTestimonials from "~/components/index/testimonials";
+import DeepinWhy from "~/components/deepin/why";
+import DeepinOffice from "~/components/deepin/office";
+import DeepinProduction from "~/components/deepin/production";
+import DeepinNews from "~/components/deepin/news";
+import DeepinTestimonials from "~/components/deepin/testimonials";
 import color from "~/mixins/color";
+import zh from "~/assets/locales/zh.json";
+import en from "~/assets/locales/en.json";
 
 export default {
   components: {
-    IndexDevelopment,
-    IndexFoot,
-    IndexFootnotes,
-    IndexHead,
-    IndexOtherFeatures,
-    IndexPopPi,
-    IndexSecurity,
-    IndexSoftware,
-    IndexStreamline,
-    IndexSystem76,
-    IndexTestimonials,
+    DeepinWhy,
+    DeepinOffice,
+    DeepinProduction,
+    DeepinTestimonials,
+    DeepinNews,
   },
 
   mixins: [color],
+
+  computed: {
+    settings() {
+      if (this.$route.path.startsWith("/en")) {
+        return en;
+      } else {
+        return zh;
+      }
+    },
+  },
 };
 </script>

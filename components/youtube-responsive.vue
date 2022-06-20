@@ -73,6 +73,9 @@ export default {
     },
 
     src() {
+      if (this.video.startsWith("http")) {
+        return this.video;
+      }
       return `https://www.youtube-nocookie.com/embed/${this.video}?rel=0&amp;controls=0&amp;showinfo=0`;
     },
   },
