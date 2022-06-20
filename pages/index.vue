@@ -1,10 +1,23 @@
 <template>
   <main :class="classes" v-if="settings">
-    <deepin-why :setting="settings.why"></deepin-why>
-    <deepin-office :setting="settings.office"></deepin-office>
-    <deepin-production :setting="settings.production"></deepin-production>
-    <deepin-news :setting="settings.news"></deepin-news>
-    <deepin-testimonials :setting="settings.testimonia"></deepin-testimonials>
+    <deepin-carousel
+      v-if="settings.carousel"
+      :setting="settings.carousel"
+    ></deepin-carousel>
+    <deepin-why v-if="settings.why" :setting="settings.why"></deepin-why>
+    <deepin-office
+      v-if="settings.office"
+      :setting="settings.office"
+    ></deepin-office>
+    <deepin-production
+      v-if="settings.production"
+      :setting="settings.production"
+    ></deepin-production>
+    <deepin-news v-if="settings.news" :setting="settings.news"></deepin-news>
+    <deepin-testimonials
+      v-if="settings.testimonia"
+      :setting="settings.testimonia"
+    ></deepin-testimonials>
     <iframe src="https://bbs.deepin.org/footer"></iframe>
   </main>
 </template>
@@ -45,9 +58,8 @@ import DeepinOffice from "~/components/deepin/office";
 import DeepinProduction from "~/components/deepin/production";
 import DeepinNews from "~/components/deepin/news";
 import DeepinTestimonials from "~/components/deepin/testimonials";
+import DeepinCarousel from "~/components/deepin/carousel";
 import color from "~/mixins/color";
-import zh from "~/assets/locales/zh.json";
-import en from "~/assets/locales/en.json";
 
 export default {
   components: {
@@ -56,17 +68,24 @@ export default {
     DeepinProduction,
     DeepinTestimonials,
     DeepinNews,
+    DeepinCarousel,
   },
 
   mixins: [color],
 
-  computed: {
-    settings() {
-      if (this.$route.path.startsWith("/en")) {
-        return en;
-      } else {
-        return zh;
-      }
+  data: () => {
+    return { settings: null };
+  },
+  created() {
+    this.fetchSettings();
+  },
+  methods: {
+    async fetchSettings() {
+      const language = this.$route.path.startsWith("/en") ? "en" : "zh";
+      const resp = await fetch(
+        `${process.env.PUBLIC_URL}/locales/${language}.json`
+      );
+      this.settings = await resp.json();
     },
   },
 };

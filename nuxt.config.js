@@ -81,7 +81,11 @@ export default {
     color: "#6ACAD8",
   },
 
-  buildModules: ["@aceforth/nuxt-optimized-images", "@nuxtjs/color-mode"],
+  buildModules: [
+    "@aceforth/nuxt-optimized-images",
+    "@nuxtjs/color-mode",
+    "@nuxtjs/vuetify",
+  ],
 
   modules: ["@nuxtjs/axios"],
 

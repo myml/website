@@ -1,35 +1,45 @@
 <template>
-  <section>
-    <div
-      :class="['icon', 'previous', hasPrevious ? null : 'disabled']"
-      @click.prevent="gotoPrevious"
-    >
-      <font-awesome-icon :icon="faChevronLeft" />
+  <div>
+    <div class="copy">
+      <sys-header-2>
+        {{ setting.title }}
+      </sys-header-2>
+      <sys-paragraph-1 class="sys-paragraph-1">
+        {{ setting.content }}
+      </sys-paragraph-1>
     </div>
-
-    <div
-      :class="['icon', 'next', hasNext ? null : 'disabled']"
-      @click.prevent="gotoNext"
-    >
-      <font-awesome-icon :icon="faChevronRight" />
-    </div>
-
-    <transition mode="out-in" :name="transition">
-      <div :key="currentIndex" class="item">
-        <font-awesome-icon class="quote" :icon="faQuoteLeft" />
-
-        <p>{{ current.content }}</p>
-        <h5>{{ current.name }}</h5>
-
-        <img
-          class="avatar"
-          v-if="current.image"
-          :src="current.image"
-          :alt="current.name"
-        />
+    <section>
+      <div
+        :class="['icon', 'previous', hasPrevious ? null : 'disabled']"
+        @click.prevent="gotoPrevious"
+      >
+        <font-awesome-icon :icon="faChevronLeft" />
       </div>
-    </transition>
-  </section>
+
+      <div
+        :class="['icon', 'next', hasNext ? null : 'disabled']"
+        @click.prevent="gotoNext"
+      >
+        <font-awesome-icon :icon="faChevronRight" />
+      </div>
+
+      <transition mode="out-in" :name="transition">
+        <div :key="currentIndex" class="item">
+          <font-awesome-icon class="quote" :icon="faQuoteLeft" />
+
+          <p>{{ current.content }}</p>
+          <h5>{{ current.name }}</h5>
+
+          <img
+            class="avatar"
+            v-if="current.image"
+            :src="current.image"
+            :alt="current.name"
+          />
+        </div>
+      </transition>
+    </section>
+  </div>
 </template>
 
 <style scoped>
@@ -42,6 +52,18 @@ section {
   padding: 0 1rem;
   position: relative;
   width: 100%;
+}
+.copy {
+  grid-column: 1 / 2;
+  margin: 0 auto 1rem;
+  max-width: 80ch;
+}
+.copy > *:first-child {
+  margin-top: 0;
+  text-align: center;
+}
+.copy > *:last-child {
+  margin-bottom: 0;
 }
 
 .next-enter-active,
@@ -128,6 +150,7 @@ section {
   grid-column: 1 / 2;
   grid-row: 3 / 4;
   margin: 0 0;
+  text-align: center;
 }
 
 .avatar {

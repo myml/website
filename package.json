@@ -40,6 +40,7 @@
     "webp-loader": "^0.6.0"
   },
   "devDependencies": {
+    "@nuxtjs/vuetify": "^1.12.3",
     "@system76/eslint-config": "^3.0.0",
     "eslint": "^7.17.0",
     "eslint-plugin-testcafe": "^0.2.1",

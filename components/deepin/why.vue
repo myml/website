@@ -171,8 +171,7 @@ section > h2 {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: auto repeat(2, 1fr);
   }
-
-  section > h2 {
+  section > .copy {
     grid-column: 1 / 3;
   }
 }

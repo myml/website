@@ -9,31 +9,31 @@
       </sys-paragraph-1>
     </div>
 
-    <div
-      :class="[classes, 'block']"
-      v-for="(card, index) in setting.cards"
-      :key="index"
-    >
+    <div :class="[classes, 'block']" v-for="(card, index) in news" :key="index">
       <div class="text">
         <div class="header">
           <div>
-            <span class="time">Time</span>
-            <h2 class="title">Title</h2>
+            <span class="time">{{ card.date }}</span>
+            <a class="link" target="__black" :href="card.link.url">
+              {{ card.link.title }}
+            </a>
           </div>
           <div>
-            <a class="link" href="">查看</a>
+            <h4 class="title">{{ card.title }}</h4>
           </div>
+          <div></div>
         </div>
-        <sys-paragraph-1 class="sys-paragraph-1">
-          {{ card.content }}
-        </sys-paragraph-1>
+        <div class="content" v-html="card.content"></div>
       </div>
     </div>
   </section>
 </template>
 
 <style scoped>
-.header {
+.content {
+  margin: 1rem 0;
+}
+.header > div:first-child {
   display: flex;
   justify-content: space-between;
 }
@@ -52,12 +52,10 @@
   margin: 0 auto 1rem;
   max-width: 80ch;
 }
-
 .copy > *:first-child {
   margin-top: 0;
   text-align: center;
 }
-
 .copy > *:last-child {
   margin-bottom: 0;
 }
@@ -196,16 +194,19 @@ section > h2 {
   section > h2 {
     grid-column: 1 / 3;
   }
+  section > .copy {
+    grid-column: 1 / 3;
+  }
 }
 
 @media (width >= 1280px) {
   section {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     grid-template-rows: auto 1fr auto;
   }
 
   section > .copy {
-    grid-column: 1 / 5;
+    grid-column: 1 / 4;
   }
 }
 </style>
@@ -224,11 +225,35 @@ export default {
   data: () => ({
     active: false,
     image: "other-features-mode",
+    news: [],
   }),
 
   props: ["setting"],
 
+  created() {
+    this.fetchNews();
+  },
+
   methods: {
+    async fetchNews() {
+      const resp = await fetch(this.setting.api);
+      const list = await resp.json();
+
+      this.news = list.slice(0, 3).map((item) => {
+        let tmp = document.createElement("div");
+        tmp.innerHTML = item.excerpt.rendered;
+        tmp.querySelector("a")?.remove();
+        return {
+          title: item.title.rendered,
+          date: item.date,
+          content: tmp.textContent,
+          link: {
+            title: this.setting.link_title,
+            url: item.link,
+          },
+        };
+      });
+    },
     toggleModal(image) {
       this.image = image;
       this.active = true;
