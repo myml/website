@@ -63,8 +63,6 @@ import DeepinNews from "~/components/deepin/news";
 import DeepinTestimonials from "~/components/deepin/testimonials";
 import DeepinCarousel from "~/components/deepin/carousel";
 import color from "~/mixins/color";
-import zh from "~/static/locales/zh.json";
-import en from "~/static/locales/en.json";
 
 export default {
   components: {
@@ -78,22 +76,29 @@ export default {
 
   mixins: [color],
 
-  data: () => {
-    return { settings: null };
+  async asyncData({ route, $config }) {
+    const language = route.path.startsWith("/en") ? "en" : "zh";
+    const resp = await fetch(`${$config.PUBLIC_URL}/locales/${language}.json`);
+    return { settings: await resp.json() };
   },
-  created() {
-    this.fetchSettings();
-  },
-  methods: {
-    async fetchSettings() {
-      this.settings = this.$route.path.startsWith("/en") ? en : zh;
-      return;
-      const language = this.$route.path.startsWith("/en") ? "en" : "zh";
-      const resp = await fetch(
-        `${process.env.PUBLIC_URL}/locales/${language}.json`
-      );
-      this.settings = await resp.json();
-    },
+  head() {
+    if (!this.settings) {
+      return null;
+    }
+    return {
+      title: this.settings.seo.title,
+      htmlAttrs: {
+        lang: this.settings.seo.lang,
+      },
+      meta: [
+        // hid is used as unique identifier. Do not use `vmid` for it as it will not work
+        {
+          hid: "description",
+          name: "description",
+          content: "My custom description",
+        },
+      ],
+    };
   },
 };
 </script>

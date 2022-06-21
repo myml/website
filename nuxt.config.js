@@ -2,10 +2,10 @@ import config from "./config/index";
 
 export default {
   ssr: true,
-  target: "static",
+  target: "server",
 
   head: {
-    title: "Pop!_OS by System76",
+    title: "深度科技社区",
 
     htmlAttrs: {
       lang: "en",
@@ -20,43 +20,17 @@ export default {
           "Imagine an OS for the software developer, maker and computer science professional who uses their computer as a tool to discover and create. Welcome to Pop!_OS.",
       },
 
-      { name: "theme-color", content: "#6ACAD8" },
-      { name: "msapplication-TileColor", content: "#46bac8" },
-
-      { name: "application-name", content: "Pop!_OS by System76" },
-      { name: "apple-mobile-web-app-title", content: "Pop!_OS" },
-
-      { name: "og:type", content: "website" },
-      { name: "og:title", content: "Pop!_OS by System76" },
-      {
-        name: "og:description",
-        content:
-          "Imagine an OS for the software developer, maker and computer science professional who uses their computer as a tool to discover and create. Welcome to Pop!_OS.",
-      },
-      { name: "og:image", content: "https://pop.system76.com/icon.png" },
-      { name: "og:url", content: "https://pop.system76.com" },
-
-      { name: "twitter:site", content: "@system76" },
-      { name: "twitter:title", content: "Pop!_OS by System76" },
-      {
-        name: "twitter:description",
-        content:
-          "Imagine an OS for the software developer, maker and computer science professional who uses their computer as a tool to discover and create. Welcome to Pop!_OS.",
-      },
-      { name: "twitter:image", content: "https://pop.system76.com/icon.png" },
+      { name: "theme-color", content: "#000" },
+      { name: "msapplication-TileColor", content: "#000" },
     ],
 
     link: [
-      { rel: "manifest", href: "/manifest.json" },
-
-      { rel: "icon", type: "image/png", sizes: "16x16", href: "/icon-16.png" },
-      { rel: "icon", type: "image/png", sizes: "32x32", href: "/icon-32.png" },
       {
-        rel: "application-touch-icon",
-        sizes: "180x180",
-        href: "/apple-touch-icon.png",
+        rel: "icon",
+        type: "image/png",
+        sizes: "128x128",
+        href: "/favicon.png",
       },
-      { rel: "mask-icon", href: "/safari-pinned-tab.svg", color: "#46bac8" },
     ],
 
     script: [],
@@ -76,6 +50,9 @@ export default {
   ],
 
   env: config,
+  publicRuntimeConfig: {
+    PUBLIC_URL: process.env.BASE_URL || "http://localhost:3000",
+  },
 
   loading: {
     color: "#6ACAD8",

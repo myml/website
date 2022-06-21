@@ -7,7 +7,7 @@
   "type": "module",
   "scripts": {
     "start": "nuxt dev",
-    "build": "nuxt generate",
+    "build": "nuxt build",
     "lint": "eslint --ext js,vue --ignore-path .gitignore .",
     "lint:fix": "eslint --fix --ext js,vue --ignore-path .gitignore .",
     "test:browser": "testcafe remote --qr-code ./test/browser/**"
