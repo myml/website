@@ -32,6 +32,10 @@
 <style scoped>
 .content {
   margin: 1rem 0;
+  word-break: break-word;
+}
+.content >>> a {
+  display: none;
 }
 .header > div:first-child {
   display: flex;
@@ -240,13 +244,10 @@ export default {
       const list = await resp.json();
 
       this.news = list.slice(0, 3).map((item) => {
-        let tmp = document.createElement("div");
-        tmp.innerHTML = item.excerpt.rendered;
-        tmp.querySelector("a")?.remove();
         return {
           title: item.title.rendered,
           date: item.date,
-          content: tmp.textContent,
+          content: item.excerpt.rendered,
           link: {
             title: this.setting.link_title,
             url: item.link,

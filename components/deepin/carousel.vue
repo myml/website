@@ -12,7 +12,9 @@
         :key="index"
         eager
       >
-        <img :src="card.image" eager />
+        <a :href="card.url">
+          <img :src="card.image" eager />
+        </a>
       </v-carousel-item>
     </v-carousel>
     <div class="links">
@@ -45,6 +47,7 @@ img {
   a {
     &:first-of-type {
       background-color: #3351ff;
+      border-color: #3351ff;
     }
     text-decoration: none;
     color: white;

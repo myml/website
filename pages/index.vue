@@ -18,7 +18,10 @@
       v-if="settings.testimonia"
       :setting="settings.testimonia"
     ></deepin-testimonials>
-    <iframe src="https://bbs.deepin.org/footer"></iframe>
+    <iframe
+      v-if="settings.footer"
+      :src="'https://bbs.deepin.org/footer?lang=' + settings.footer.lang"
+    ></iframe>
   </main>
 </template>
 
@@ -60,6 +63,8 @@ import DeepinNews from "~/components/deepin/news";
 import DeepinTestimonials from "~/components/deepin/testimonials";
 import DeepinCarousel from "~/components/deepin/carousel";
 import color from "~/mixins/color";
+import zh from "~/static/locales/zh.json";
+import en from "~/static/locales/en.json";
 
 export default {
   components: {
@@ -81,6 +86,8 @@ export default {
   },
   methods: {
     async fetchSettings() {
+      this.settings = this.$route.path.startsWith("/en") ? en : zh;
+      return;
       const language = this.$route.path.startsWith("/en") ? "en" : "zh";
       const resp = await fetch(
         `${process.env.PUBLIC_URL}/locales/${language}.json`

@@ -85,7 +85,12 @@ export default {
     "@aceforth/nuxt-optimized-images",
     "@nuxtjs/color-mode",
     "@nuxtjs/vuetify",
+    "@nuxtjs/google-analytics",
   ],
+
+  googleAnalytics: {
+    id: "G-QHZ7DPPD2D",
+  },
 
   modules: ["@nuxtjs/axios"],
 

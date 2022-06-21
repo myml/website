@@ -164,6 +164,8 @@
   "news": {
     "title": "新闻资讯",
     "content": "漂亮的设计，贴心的人机交互巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉",
+    "api": "https://www.deepin.org/en/wp-json/wp/v2/posts",
+    "link_title": "See",
     "cards": [
       {
         "title": "自定义工作流",
@@ -190,5 +192,8 @@
         "video": "https://www.youtube.com/embed/SrWw2LeZ21U"
       }
     ]
+  },
+  "footer": {
+    "lang": "en"
   }
 }
