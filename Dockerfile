@@ -5,4 +5,5 @@ WORKDIR /src
 RUN yarn install
 COPY ./ /src
 RUN yarn build
-CMD [ "yarn","nuxt", "start" ]
+ENV HOST=0.0.0.0
+CMD [ "yarn", "nuxt", "start" ]
