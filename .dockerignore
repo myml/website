@@ -94,3 +94,5 @@ sw.*
 
 # mdBook build files
 static/docs
+
+.git
