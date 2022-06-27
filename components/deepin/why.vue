@@ -164,6 +164,9 @@ section > h2 {
   .block {
     padding: 2rem;
   }
+  .block h2 {
+    margin: 1rem 0;
+  }
 }
 
 @media (width >= 120ch) {

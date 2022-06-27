@@ -1,5 +1,6 @@
 <template>
   <main :class="classes" v-if="settings">
+    <d-header :lang="settings.seo.lang"></d-header>
     <deepin-carousel
       v-if="settings.carousel"
       :setting="settings.carousel"
@@ -18,10 +19,7 @@
       v-if="settings.testimonia"
       :setting="settings.testimonia"
     ></deepin-testimonials>
-    <iframe
-      v-if="settings.footer"
-      :src="'https://bbs.deepin.org/footer?lang=' + settings.footer.lang"
-    ></iframe>
+    <d-footer :lang="settings.seo.lang"></d-footer>
   </main>
 </template>
 
@@ -95,8 +93,14 @@ export default {
         {
           hid: "description",
           name: "description",
-          content: "My custom description",
+          content: this.settings.seo.description,
         },
+        ...this.settings.seo.keywords.map((keyword) => {
+          return {
+            name: "keywords",
+            content: keyword,
+          };
+        }),
       ],
     };
   },

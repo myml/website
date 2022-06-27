@@ -13,7 +13,7 @@
         eager
       >
         <a :href="card.url">
-          <img :src="card.image" eager />
+          <img :src="card.image" :alt="card.title" eager />
         </a>
       </v-carousel-item>
     </v-carousel>

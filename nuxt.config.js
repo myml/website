@@ -31,9 +31,29 @@ export default {
         sizes: "128x128",
         href: "/favicon.png",
       },
+      {
+        rel: "stylesheet",
+        type: "text/css",
+        href: "https://www.deepin.org/wp-content/themes/hashone/newHeader.css",
+      },
+      {
+        rel: "stylesheet",
+        type: "text/css",
+        href: "https://unpkg.com/deepin-components@^0.0.1/dist/web-components/main.css",
+      },
     ],
 
-    script: [],
+    script: [
+      {
+        src: "https://code.jquery.com/jquery-3.5.1.min.js",
+      },
+      {
+        src: "https://www.deepin.org/wp-content/themes/hashone/header.js",
+      },
+      {
+        src: "https://unpkg.com/deepin-components@^0.0.1/dist/web-components/main.js",
+      },
+    ],
 
     __dangerouslyDisableSanitizers: ["script"],
   },

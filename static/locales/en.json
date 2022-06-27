@@ -1,84 +1,121 @@
 {
   "seo": {
-    "title": "Deepin",
+    "title": "Deepin  - Deepin Linux Operating System ",
     "lang": "en",
-    "description": ""
+    "description": "Provide a safe, reliable, beautiful and easy-to-use operating system to meet the different usage scenarios of global users and provide a better choose.",
+    "keywords": [
+      "Linux",
+      "Linux Distribution",
+      "OpenSource",
+      "open source",
+      "Operating System",
+      "open source software"
+    ]
   },
-  "why": {
-    "title": "为什么选deepin? - EN",
-    "content": "漂亮的设计，贴心的人机交互巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉",
+  "carousel": {
+    "links": [
+      {
+        "title": "Download",
+        "url": "https://www.deepin.org/zh/download/"
+      },
+      {
+        "title": "Installation Guide",
+        "url": "https://www.deepin.org/zh/installation/"
+      },
+
+      {
+        "title": "Changelog",
+        "url": "https://www.deepin.org/zh/release-notes/"
+      }
+    ],
     "cards": [
       {
-        "title": "自定义工作流",
-        "content": "巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉",
+        "title": "20.6发布",
+        "image": "https://www.deepin.org/wp-content/uploads/2022/05/pc_banner_cn_desk-1.jpg",
+        "url": "https://www.deepin.org/zh/download/"
+      },
+      {
+        "title": "国际排名",
+        "image": "http://www.deepin.org/wp-content/uploads/2022/03/%E7%A4%BE%E5%8C%BA%E5%AE%98%E7%BD%91%E9%A6%96%E9%A1%B5BANNER%EF%BC%88PC%EF%BC%89.jpg",
+        "url": "https://distrowatch.com/table.php?distribution=deepin"
+      }
+    ]
+  },
+  "why": {
+    "title": "Why deepin?",
+    "content": "Beautiful UI design, intimate human-computer interaction, and friendly community environment make you feel at home.",
+    "cards": [
+      {
+        "title": "Out of the box",
+        "content": "Deepin is easy to install and can meet your work needs without additional system configuration and software installation. You can configure deepin as you want, but it is not necessary - optimal settings and adjustments have been applied by default to meet the usage demands of most users.",
         "image": "https://i.ytimg.com/vi/SrWw2LeZ21U/mqdefault.jpg",
         "video": "https://www.youtube.com/embed/SrWw2LeZ21U"
       },
       {
-        "title": "自定义工作流",
-        "content": "巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉",
+        "title": "User-friendly",
+        "content": "The desktop environment based on the self-developed DTK has a beautiful UI, and the human-computer interaction is more in line with user habits, making you feel at home.",
         "image": "https://i.ytimg.com/vi/SrWw2LeZ21U/mqdefault.jpg",
         "video": "https://www.youtube.com/embed/SrWw2LeZ21U"
       },
       {
-        "title": "自定义工作流",
-        "content": "巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉",
+        "title": "Privacy Protection",
+        "content": "After system installation, everything is up to you. Photos, music, files, etc. are your personal data. We will not collect any of them. You can do whatever you want in deepin.",
         "image": "https://i.ytimg.com/vi/SrWw2LeZ21U/mqdefault.jpg",
         "video": "https://www.youtube.com/embed/SrWw2LeZ21U"
       },
       {
-        "title": "自定义工作流",
-        "content": "巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉",
+        "title": "Perfect Ecology",
+        "content": "Deepin not only develops a series of basic office software such as Music, Movie, Screen Capture, but also provides nearly 40,000 applications in App Store, which can run perfectly on deepin.",
         "image": "https://i.ytimg.com/vi/SrWw2LeZ21U/mqdefault.jpg",
         "video": "https://www.youtube.com/embed/SrWw2LeZ21U"
       },
       {
-        "title": "自定义工作流",
-        "content": "巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉",
+        "title": "Free and Open-source",
+        "content": "Our own technologies and open-source projects are based on Debian. Deepin follows the open-source rules and migrates almost all source code to GitHub. It is a completely free community edition. We do not charge any fees to users.",
         "image": "https://i.ytimg.com/vi/SrWw2LeZ21U/mqdefault.jpg",
         "video": "https://www.youtube.com/embed/SrWw2LeZ21U"
       },
       {
-        "title": "自定义工作流",
-        "content": "巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉",
+        "title": "Open and Sharing",
+        "content": "Our development, operation, products, and testing are closely linked to users. You can feed back your questions in deepin forums, Wechat, Telegram, and Twitter. Let's improve deepin together.",
         "image": "https://i.ytimg.com/vi/SrWw2LeZ21U/mqdefault.jpg",
         "video": "https://www.youtube.com/embed/SrWw2LeZ21U"
       }
     ]
   },
   "office": {
-    "title": "精简你的工作流 - EN",
-    "content": "这是副标题，这是副标题，这是副标题，这是副标题，这是副标题，这是副标题",
+    "title": "Practical and Effective Features",
+    "content": "Deepin has developed over 40 applications based on user habits, making the office work more efficient and convenient!",
     "cards": [
       {
-        "title": "自定义工作流",
-        "content": "巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉",
+        "title": "Free Working Style",
+        "content": "In deepin, you can enjoy not only the beautiful desktop environment, but also diversified working styles. No matter what kind of your working manner is, we can meet your needs. Deepin brings you a different experience.",
         "image": "https://i.ytimg.com/vi/SrWw2LeZ21U/mqdefault.jpg",
         "video": "https://www.youtube.com/embed/SrWw2LeZ21U"
       },
       {
-        "title": "自定义工作流",
-        "content": "巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉",
+        "title": "Grand Search",
+        "content": "No matter where your forgotten photos, videos and files are, Grand Search can help you quickly retrieve the content you want without rummaging through the huge disk space.",
         "image": "https://i.ytimg.com/vi/SrWw2LeZ21U/mqdefault.jpg",
         "video": "https://www.youtube.com/embed/SrWw2LeZ21U"
       },
       {
-        "title": "自定义工作流",
-        "content": "巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉",
+        "title": "Screen Capture",
+        "content": "It offers various capture methods for you to easily take screenshots in you daily work. When you watch interesting video sections, you can also record and share them without installing unnecessary applications.",
         "image": "https://i.ytimg.com/vi/SrWw2LeZ21U/mqdefault.jpg",
         "video": "https://www.youtube.com/embed/SrWw2LeZ21U"
       },
       {
-        "title": "自定义工作流",
-        "content": "巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉",
+        "title": "Mail",
+        "content": "If you have one or more mailboxes, how can you better arrange all events in your multiple emails? Mail supports the quick login of global mainstream e-mail accounts and synchronizes your schedule, so that you can better schedule your daily life.",
         "image": "https://i.ytimg.com/vi/SrWw2LeZ21U/mqdefault.jpg",
         "video": "https://www.youtube.com/embed/SrWw2LeZ21U"
       }
     ]
   },
   "production": {
-    "title": "开发者工具",
-    "content": "这是副标题，这是副标题，这是副标题，这是副标题，这是副标题，这是副标题",
+    "title": "Productivity Makes Life Better",
+    "content": "Deepin App Store offers nearly 40,000 apps to satisfy all your needs in life and work.",
     "cards": [
       {
         "list": [
@@ -89,8 +126,8 @@
           "Jupyter",
           "MATLAB"
         ],
-        "title": "深度学习",
-        "content": "仓库有多款深度学习框架，仓库有多款深度学习框架",
+        "title": "Office",
+        "content": "Quickly solve problems in work, effectively improve work efficiency, and make you better every moment.",
         "link": {
           "title": "学习更多",
           "url": "https://support.system76.com/articles/tensorman/"
@@ -105,8 +142,8 @@
           "Jupyter",
           "MATLAB"
         ],
-        "title": "深度学习",
-        "content": "仓库有多款深度学习框架，仓库有多款深度学习框架",
+        "title": "Entertainment",
+        "content": "Music and movies give us infinite possibilities and imagination, making our ordinary life sparkle.",
         "link": {
           "title": "学习更多",
           "url": "https://support.system76.com/articles/tensorman/"
@@ -121,8 +158,8 @@
           "Jupyter",
           "MATLAB"
         ],
-        "title": "深度学习",
-        "content": "仓库有多款深度学习框架，仓库有多款深度学习框架",
+        "title": "Design",
+        "content": "From 0 to 1, from the sketch to the final presentation of your idea, they make the impossible come true and the world a better place.",
         "link": {
           "title": "学习更多",
           "url": "https://support.system76.com/articles/tensorman/"
@@ -137,8 +174,8 @@
           "Jupyter",
           "MATLAB"
         ],
-        "title": "深度学习",
-        "content": "仓库有多款深度学习框架，仓库有多款深度学习框架",
+        "title": "Development",
+        "content": "Software development is the main force to promote human progress in this century, and also the source power for Linux long-term development. More and more deepin developers and users are the biggest driving force for us to build a perfect distribution.",
         "link": {
           "title": "学习更多",
           "url": "https://support.system76.com/articles/tensorman/"
@@ -197,8 +234,5 @@
         "video": "https://www.youtube.com/embed/SrWw2LeZ21U"
       }
     ]
-  },
-  "footer": {
-    "lang": "en"
   }
 }

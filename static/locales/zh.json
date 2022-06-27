@@ -1,8 +1,20 @@
 {
   "seo": {
-    "title": "深度科技社区",
+    "title": "Deepin  - 基于Linux的开源国产操作系统",
     "lang": "zh-hant",
-    "description": ""
+    "description": "作为国内知名开源操作系统团队，Deepin以提供安全可靠、美观易用的国产操作系统与开源解决方案为目标，满足全球用户不同的应用场景，给用户提供一种更好的选择。",
+    "keywords": [
+      "Deepin",
+      "操作系统",
+      "国产系统",
+      "桌面操作系统",
+      "Linux",
+      "Linux发行版",
+      "开源软件",
+      "开源社区",
+      "桌面应用",
+      "开源中国"
+    ]
   },
   "carousel": {
     "links": [
@@ -35,79 +47,67 @@
   },
   "why": {
     "title": "为什么选deepin?",
-    "content": "漂亮的设计，贴心的人机交互巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉",
+    "content": "漂亮的设计、贴心的人机交互、安全友好的社区环境让你感觉宾至如归。",
     "cards": [
       {
-        "title": "自定义工作流",
-        "content": "巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉",
-        "image": "https://i.ytimg.com/vi/SrWw2LeZ21U/mqdefault.jpg",
-        "video": "https://www.youtube.com/embed/SrWw2LeZ21U"
+        "title": "开箱即用",
+        "content": "安装简单，无需对系统进行额外配置和软件安装，即可满足日常办公需要。尽管您可以自行配置，但默认情况下，我们对所有内容都进行了最优的设置和调整，保证了大部分用户的使用诉求。"
       },
       {
-        "title": "自定义工作流",
-        "content": "巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉",
-        "image": "https://i.ytimg.com/vi/SrWw2LeZ21U/mqdefault.jpg",
-        "video": "https://www.youtube.com/embed/SrWw2LeZ21U"
+        "title": "同理心",
+        "content": "基于自研dtk套件开发的桌面环境，界面优美，人机交互更符合用户使用习惯，在使用过程中给您带来宾至如归的感觉。"
       },
       {
-        "title": "自定义工作流",
-        "content": "巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉",
-        "image": "https://i.ytimg.com/vi/SrWw2LeZ21U/mqdefault.jpg",
-        "video": "https://www.youtube.com/embed/SrWw2LeZ21U"
+        "title": "隐私保障",
+        "content": "系统安装后所有的事情都由您来做主，照片、音乐、文件等属于个人数据，我们不会收集您的任何数据。您可以在deepin上做任何您想做的事。"
       },
       {
-        "title": "自定义工作流",
-        "content": "巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉",
-        "image": "https://i.ytimg.com/vi/SrWw2LeZ21U/mqdefault.jpg",
-        "video": "https://www.youtube.com/embed/SrWw2LeZ21U"
+        "title": "生态完善",
+        "content": "deepin不仅自研音乐、视频、截图录屏等一系列基础办公软件，应用商店更提供了近40000款软件，可在deepin系统环境中完美运行。"
       },
       {
-        "title": "自定义工作流",
-        "content": "巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉",
-        "image": "https://i.ytimg.com/vi/SrWw2LeZ21U/mqdefault.jpg",
-        "video": "https://www.youtube.com/embed/SrWw2LeZ21U"
+        "title": "开源、免费",
+        "content": "我们有基于Debian的技术和开源项目，deepin遵守开源规则，几乎将所有源代码迁移至Github。deepin是完全免费的社区版，我们不会向用户收取任何费用。"
       },
       {
-        "title": "自定义工作流",
-        "content": "巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉",
-        "image": "https://i.ytimg.com/vi/SrWw2LeZ21U/mqdefault.jpg",
-        "video": "https://www.youtube.com/embed/SrWw2LeZ21U"
+        "title": "开放、共享",
+        "content": "开发、运营、产品、测试和用户之间有着紧密的联系，您可以通过论坛、微信、telegram、Twitter向我们反馈您的问题，让我们一同不断完善deepin。"
       }
     ]
   },
   "office": {
-    "title": "精简你的工作流",
-    "content": "这是副标题，这是副标题，这是副标题，这是副标题，这是副标题，这是副标题",
+    "title": "特色功能实用更高效",
+    "content": "deepin根据用户使用习惯自研开发40余款应用，为用户提供了更高效、便捷的办公能力！",
     "cards": [
       {
-        "title": "自定义工作流",
-        "content": "巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉",
+        "title": "自由定义办公方式",
+        "content": "您不但可以欣赏到漂亮的桌面环境，更可以感受到多样化的办公方式。无论哪种工作方式，我们都可以满足您的需求，让deepin为你来带不一样的使用感受！",
         "image": "https://i.ytimg.com/vi/SrWw2LeZ21U/mqdefault.jpg",
         "video": "https://www.youtube.com/embed/SrWw2LeZ21U"
       },
       {
-        "title": "自定义工作流",
-        "content": "巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉",
+        "title": "全局搜索",
+        "content": "不论您的照片、视频、文件被遗忘在哪个角落，它都可以快速地帮助你检索到想要的内容，不必翻箱倒柜、在巨大的硬盘空间中去搜索。",
         "image": "https://i.ytimg.com/vi/SrWw2LeZ21U/mqdefault.jpg",
         "video": "https://www.youtube.com/embed/SrWw2LeZ21U"
       },
       {
-        "title": "自定义工作流",
-        "content": "巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉",
+        "title": "截图录屏",
+        "content": "如果您在日常办公时需要搜集任何图文资料，它可以提供多种截图方式。如果遇见有趣的视频片段，也可以录屏分享，无需再安装不必要的软件。",
         "image": "https://i.ytimg.com/vi/SrWw2LeZ21U/mqdefault.jpg",
         "video": "https://www.youtube.com/embed/SrWw2LeZ21U"
       },
       {
-        "title": "自定义工作流",
-        "content": "巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉",
+        "title": "邮箱客户端",
+        "content": "如果你有一个或多个邮箱，那么该如何更好的处理所有碎片化邮件往来的安排？邮箱客户端支持全球主流的邮箱账户快速绑定，并将日程进行同步，让你更好管理你的日常事项。",
         "image": "https://i.ytimg.com/vi/SrWw2LeZ21U/mqdefault.jpg",
         "video": "https://www.youtube.com/embed/SrWw2LeZ21U"
       }
     ]
   },
   "production": {
-    "title": "开发者工具",
-    "content": "这是副标题，这是副标题，这是副标题，这是副标题，这是副标题，这是副标题",
+    "title": "生产力让生活更美好",
+    "content": "deepin应用商店囊括近40000款应用，满足你的生活和工作所有需求。",
     "cards": [
       {
         "list": [
@@ -118,8 +118,8 @@
           "Jupyter",
           "MATLAB"
         ],
-        "title": "深度学习",
-        "content": "仓库有多款深度学习框架，仓库有多款深度学习框架",
+        "title": "日常办公",
+        "content": "快速解决办公问题，有效提升工作效率，让进步发生在生活中的每时每刻。",
         "link": {
           "title": "学习更多",
           "url": "https://support.system76.com/articles/tensorman/"
@@ -134,8 +134,8 @@
           "Jupyter",
           "MATLAB"
         ],
-        "title": "深度学习",
-        "content": "仓库有多款深度学习框架，仓库有多款深度学习框架",
+        "title": "影音娱乐",
+        "content": "在有限的生命中，更多的时候都是平凡无奇，音乐、影视赋予我们无限的可能和想象，让平淡无奇的生活多了些闪光。",
         "link": {
           "title": "学习更多",
           "url": "https://support.system76.com/articles/tensorman/"
@@ -150,8 +150,8 @@
           "Jupyter",
           "MATLAB"
         ],
-        "title": "深度学习",
-        "content": "仓库有多款深度学习框架，仓库有多款深度学习框架",
+        "title": "设计与制造",
+        "content": "从0到1，从草图到最终呈现出您想表达的完美构想，让不可能成为可能，是你们让的世界变得更加美好。",
         "link": {
           "title": "学习更多",
           "url": "https://support.system76.com/articles/tensorman/"
@@ -166,40 +166,18 @@
           "Jupyter",
           "MATLAB"
         ],
-        "title": "深度学习",
-        "content": "仓库有多款深度学习框架，仓库有多款深度学习框架",
+        "title": "软件开发",
+        "content": "软件开发是本世纪以来推进人类进步的核心力量，也是Linux长久发展的源动力，更多的开发者用户是我们构建完美发行版的最大动力。",
         "link": {
           "title": "学习更多",
           "url": "https://support.system76.com/articles/tensorman/"
         }
-      }
-    ]
-  },
-  "testimonia": {
-    "title": "用户推荐",
-    "content": "来自不同领域的用户评价",
-    "cards": [
-      {
-        "name": "Stuart L.",
-        "content": "哈喽My favorite thing about Pop_OS! Is that it literally gets out of your way and I can get so much work done without any problems. My favorite feature has to be the docker and the sweet animations!!!"
-      },
-      {
-        "name": "小明",
-        "content": "When I first got my System76 laptop I decided I'd use Pop!_OS until it annoyed me, and would then switch to my distro-of-choice. Two years later not only am I still using it, it's become my distro-of-choice. It's radically cut how much time I spend hand-hacking configuration files, which gives me more time to spend on my projects"
-      },
-      {
-        "name": "Robert T.",
-        "content": "With minimal fiddling, Pop!_OS is a very capable, functional, and beautiful Linux distribution. It is still fully tweakable, but out of the box it just works. Really well!"
-      },
-      {
-        "name": "Amanda B.",
-        "content": "I am a high school science teacher, and while I do consider myself tech-savvy, I am not one to explore or experiment with different operating systems. I have been using Pop!_OS for several months now and I love it. It is very intuitive and user-friendly for the non-Linux user. Every tool I have needed has been available in the Pop Shop and those tools are easy to download, install, and use. Thank you for creating a Linux OS that is simple and approachable."
       }
     ]
   },
   "news": {
-    "title": "新闻资讯",
-    "content": "漂亮的设计，贴心的人机交互巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉",
+    "title": "社区资讯",
+    "content": "了解社区最新资讯动态",
     "api": "https://www.deepin.org/zh/wp-json/wp/v2/posts",
     "link_title": "查看",
     "cards": [
@@ -229,7 +207,26 @@
       }
     ]
   },
-  "footer": {
-    "lang": "zh"
+  "testimonia": {
+    "title": "用户推荐",
+    "content": "来自不同领域的用户评价",
+    "cards": [
+      {
+        "name": "Stuart L.",
+        "content": "哈喽My favorite thing about Pop_OS! Is that it literally gets out of your way and I can get so much work done without any problems. My favorite feature has to be the docker and the sweet animations!!!"
+      },
+      {
+        "name": "小明",
+        "content": "When I first got my System76 laptop I decided I'd use Pop!_OS until it annoyed me, and would then switch to my distro-of-choice. Two years later not only am I still using it, it's become my distro-of-choice. It's radically cut how much time I spend hand-hacking configuration files, which gives me more time to spend on my projects"
+      },
+      {
+        "name": "Robert T.",
+        "content": "With minimal fiddling, Pop!_OS is a very capable, functional, and beautiful Linux distribution. It is still fully tweakable, but out of the box it just works. Really well!"
+      },
+      {
+        "name": "Amanda B.",
+        "content": "I am a high school science teacher, and while I do consider myself tech-savvy, I am not one to explore or experiment with different operating systems. I have been using Pop!_OS for several months now and I love it. It is very intuitive and user-friendly for the non-Linux user. Every tool I have needed has been available in the Pop Shop and those tools are easy to download, install, and use. Thank you for creating a Linux OS that is simple and approachable."
+      }
+    ]
   }
 }
