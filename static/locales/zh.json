@@ -110,14 +110,7 @@
     "content": "deepin应用商店囊括近40000款应用，满足你的生活和工作所有需求。",
     "cards": [
       {
-        "list": [
-          "Tensorman",
-          "Tensorflow",
-          "PyTorch",
-          "Caffe",
-          "Jupyter",
-          "MATLAB"
-        ],
+        "list": ["Tensorman", "Tensorflow", "PyTorch", "Caffe"],
         "title": "日常办公",
         "content": "快速解决办公问题，有效提升工作效率，让进步发生在生活中的每时每刻。",
         "link": {
@@ -126,46 +119,17 @@
         }
       },
       {
-        "list": [
-          "Tensorman",
-          "Tensorflow",
-          "PyTorch",
-          "Caffe",
-          "Jupyter",
-          "MATLAB"
-        ],
+        "list": ["PyTorch", "Caffe", "Jupyter", "MATLAB"],
         "title": "影音娱乐",
-        "content": "在有限的生命中，更多的时候都是平凡无奇，音乐、影视赋予我们无限的可能和想象，让平淡无奇的生活多了些闪光。",
-        "link": {
-          "title": "学习更多",
-          "url": "https://support.system76.com/articles/tensorman/"
-        }
+        "content": "在有限的生命中，更多的时候都是平凡无奇，音乐、影视赋予我们无限的可能和想象，让平淡无奇的生活多了些闪光。"
       },
       {
-        "list": [
-          "Tensorman",
-          "Tensorflow",
-          "PyTorch",
-          "Caffe",
-          "Jupyter",
-          "MATLAB"
-        ],
+        "list": ["Tensorman", "Tensorflow", "Jupyter", "MATLAB"],
         "title": "设计与制造",
-        "content": "从0到1，从草图到最终呈现出您想表达的完美构想，让不可能成为可能，是你们让的世界变得更加美好。",
-        "link": {
-          "title": "学习更多",
-          "url": "https://support.system76.com/articles/tensorman/"
-        }
+        "content": "从0到1，从草图到最终呈现出您想表达的完美构想，让不可能成为可能，是你们让的世界变得更加美好。"
       },
       {
-        "list": [
-          "Tensorman",
-          "Tensorflow",
-          "PyTorch",
-          "Caffe",
-          "Jupyter",
-          "MATLAB"
-        ],
+        "list": ["Tensorman", "Tensorflow", "PyTorch", "MATLAB"],
         "title": "软件开发",
         "content": "软件开发是本世纪以来推进人类进步的核心力量，也是Linux长久发展的源动力，更多的开发者用户是我们构建完美发行版的最大动力。",
         "link": {

@@ -17,9 +17,9 @@
       <div class="text">
         <sys-subheader-2>{{ card.title }}</sys-subheader-2>
 
-        <sys-paragraph-1 class="sys-paragraph-1">
+        <sys-paragraph-3 class="sys-paragraph-3">
           {{ card.content }}
-        </sys-paragraph-1>
+        </sys-paragraph-3>
       </div>
     </div>
   </section>

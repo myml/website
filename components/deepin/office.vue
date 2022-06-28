@@ -17,9 +17,9 @@
         {{ card.title }}
       </sys-subheader-2>
 
-      <sys-paragraph-1 class="sys-paragraph-1">
+      <sys-paragraph-3 class="sys-paragraph-3">
         {{ card.content }}
-      </sys-paragraph-1>
+      </sys-paragraph-3>
       <div class="video-wrap" @click.prevent="toggleVideo(card.video)">
         <div class="play-btn">
           <svg

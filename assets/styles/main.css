@@ -17,3 +17,9 @@ body {
 p.sys-paragraph-1 {
   word-break: break-word;
 }
+
+.sys-paragraph-3 {
+  text-indent: 2rem;
+  display: block;
+  word-break: break-word;
+}

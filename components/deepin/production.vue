@@ -19,9 +19,9 @@
         {{ card.title }}
       </sys-subheader-2>
 
-      <sys-paragraph-1 class="sys-paragraph-1">
+      <sys-paragraph-3 class="sys-paragraph-3">
         {{ card.content }}
-      </sys-paragraph-1>
+      </sys-paragraph-3>
 
       <ul class="list">
         <li v-for="v in card.list" :key="v">
@@ -29,7 +29,7 @@
         </li>
       </ul>
 
-      <div>
+      <div v-if="card.link">
         <sys-form-button
           rel="noopener"
           color="primary"

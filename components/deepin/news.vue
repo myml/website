@@ -247,7 +247,7 @@ export default {
         return {
           title: item.title.rendered,
           date: item.date,
-          content: item.excerpt.rendered,
+          content: item.excerpt.rendered.slice(0, 70) + "...",
           link: {
             title: this.setting.link_title,
             url: item.link,
